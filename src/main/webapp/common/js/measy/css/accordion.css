@@ -1,0 +1,129 @@
+/*手风琴控件-html4*/
+.accordion{
+	
+}
+/*手风琴控件-标题*/
+.accordion-title,.children-title,.grandson-title{
+	position:relative;
+	padding: 15px 8px 15px 40px;
+	display:block;
+}
+.accordion-title{
+	color:#b4b6bd;
+}
+.accordion-title.active{
+	color:#e64141;
+	background-color:#1f2530;
+}
+
+/*手风琴控件-子级*/
+.children{
+	display:none;
+	background-color:#1f2530;
+}
+.children-title{
+	color:#7a7e8f;
+}
+.children-title.active{
+	color:#fff;
+	background-color:#1c212b;
+}
+
+/*手风琴控件-孙级*/
+.grandson{
+	color:#575b6d;
+	background-color:#1c212b;
+	display:none;
+}
+.grandson-title{
+	color:#575b6d;
+}
+.grandson-title.active{
+	color:#c9d0d5;
+}
+
+/*左侧图标*/
+.accordion [class^="licon-"]{
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	margin-top: -10px;
+	width: 20px;
+	height: 20px;
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-color:transparent;
+}
+.licon-agreement{
+	background-image: url(../img/accordion/agreement.png);
+}
+.licon-calendar{
+	background-image: url(../img/accordion/calendar.png);
+}
+.licon-clock{
+	background-image: url(../img/accordion/clock.png);
+}
+.licon-config{
+	background-image: url(../img/accordion/config.png);
+}
+.licon-file{
+	background-image: url(../img/accordion/file.png);
+}
+.licon-home{
+	background-image: url(../img/accordion/home.png);
+}
+.licon-money{
+	background-image: url(../img/accordion/money.png);
+}
+.licon-proProgress{
+	background-image: url(../img/accordion/proProgress.png);
+}
+.licon-punish{
+	background-image: url(../img/accordion/punish.png);
+}
+.licon-res{
+	background-image: url(../img/accordion/res.png);
+}
+.licon-user{
+	background-image: url(../img/accordion/user.png);
+}
+.licon-arrow{
+	background-image: url(../img/accordion/arrow.png);
+}
+
+.accordion-title.active .licon-agreement{
+	background-image: url(../img/accordion/agreement-active.png);
+}
+.accordion-title.active .licon-calendar{
+	background-image: url(../img/accordion/calendar-active.png);
+}
+.accordion-title.active .licon-clock{
+	background-image: url(../img/accordion/clock-active.png);
+}
+.accordion-title.active .licon-config{
+	background-image: url(../img/accordion/config-active.png);
+}
+.accordion-title.active .licon-file{
+	background-image: url(../img/accordion/file-active.png);
+}
+.accordion-title.active .licon-home{
+	background-image: url(../img/accordion/home-active.png);
+}
+.accordion-title.active .licon-money{
+	background-image: url(../img/accordion/money-active.png);
+}
+.accordion-title.active .licon-proProgress{
+	background-image: url(../img/accordion/proProgress-active.png);
+}
+.accordion-title.active .licon-punish{
+	background-image: url(../img/accordion/punish-active.png);
+}
+.accordion-title.active .licon-res{
+	background-image: url(../img/accordion/res-active.png);
+}
+.accordion-title.active .licon-user{
+	background-image: url(../img/accordion/user-active.png);
+}
+.children-title.active .licon-arrow{
+	background-image: url(../img/accordion/arrow-active.png);
+}

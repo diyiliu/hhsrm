@@ -1,0 +1,141 @@
+@charset "utf-8";
+/*----------------grid:start--------------*/
+/*九宫控件*/
+.grid{
+    display:block;
+}
+.grid:after{
+	display:table;
+	content:'';
+	clear: both;
+	zoom:1;
+}
+/*九宫控件-单元格*/
+.grid-cell{
+	position:relative;
+	width:25%;
+	text-align:center;
+	display:block;
+	float:left;
+	font-size:14px;
+	-webkit-box-sizing:border-box;
+}
+.grid-cell:last-child{
+	margin-bottom:8px;
+}
+.grid[data-col="2"] .grid-cell{
+	width:50%;
+}
+.grid[data-col="3"] .grid-cell{
+	width:33.33%;
+}
+.grid[data-col="4"] .grid-cell{
+	width:25%;
+}
+.grid[data-col="5"] .grid-cell{
+	width:20%;
+}
+/*九宫控件-大图*/
+.grid-thumbnail{
+	position:relative;
+	display:block;
+	width:80%;
+	margin:0px auto;
+	text-align:center;
+}
+.grid-thumbnail img{
+	width:100%;
+}
+/*九宫控件-图片*/
+.grid-img{
+	position:relative;
+	width:64px;
+	height:64px;
+	margin:0px auto;
+	border-radius:4px;
+	
+	display:-moz-box;
+	display:-webkit-box;
+	display: box;
+	box-pack:center;
+	-moz-box-pack:center;
+	-webkit-box-pack:center;
+	box-align:center;
+	-moz-box-align:center;
+	-webkit-box-align:center;
+	
+}
+.grid-img .iconfont,.grid-img img{
+	position:absolute;
+	vertical-align:middle;
+	left:50%;
+	top:50%;
+	-webkit-transform: translate(-50%,-50%);
+      	-ms-transform: translate(-50%,-50%);
+         	transform: translate(-50%,-50%);
+}
+.grid-img .iconfont{
+	font-size:32px;
+	width:32px;
+	height:32px;
+	color:white;
+}
+.grid-img img{
+	width:50px;
+	height:50px;
+}
+
+.grid-img .tip,.grid-thumbnail .tip{
+	position:absolute;
+	display:block;
+	top:0px;
+	right:0px;
+	width:20px;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+	border-radius:20px;
+}
+/*九宫控件-文字*/
+.grid-label{
+	display:block;
+    width:80%;
+    height:30px;
+    margin:0px auto;
+    line-height:26px;
+    text-align:center;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+/*相册控件*/
+.album{
+	padding:5px;
+}
+.album .grid-cell{
+	padding:5px;
+	margin-top:0px;
+}
+
+.album .grid-cell .photo{
+	width:100%;
+	height:110px;
+	background-color:#eee;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.album .grid-cell .photo.camera{
+	background-image:url(../img/grid/camera.png);
+	background-size:48px 48px;
+}
+.album .grid-cell .close{
+	position:absolute;
+	top:10px;
+	right:10px;
+	width:24px;
+	height:24px;
+	background-image:url(../img/grid/close.png);
+	background-size:cover;
+}
+/*----------------grid:end----------------*/

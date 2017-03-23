@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+/*帖子列表*/
+.lit{}
+.lit .title{ font-size:120%;color:#323234; word-break:keep-all;overflow:hidden;}
+.lit .content{ color:#aaa; line-height:1.4;height:35px;overflow-y:hidden; margin-top:8px;}
+.lit .btnbar{ margin-top:4px;padding-top:2px;color:#aaa;}
+.lit .auth{ display:inline-block; width:45%; word-break:keep-all;overflow:hidden;}
+.lit .icon{ width:16px; height:16px; margin-top:2px; display:inline-block; margin-right:5px;}
+.lit .icon_group{float:right;}
+.lit .icon_group span{margin-left:10px;}
+.lit .icon_zan{ background:url(../../images/mob/forum/zan.png) no-repeat; background-size:100% auto;}
+.lit .icon_pin{ background:url(../../images/mob/forum/pin.png) no-repeat; background-size:100% auto;}
+.lit .icon_share{ background:url(../../images/mob/forum/share.png) no-repeat; background-size:100% auto;}
+.lit .icon_zan_c{ background:url(../../images/mob/forum/zan-c.png) no-repeat; background-size:100% auto;}
+.lit .icon_pin_c{ background:url(../../images/mob/forum/pin-c.png) no-repeat; background-size:100% auto;}
+.lit .icon_share_c{ background:url(../../images/mob/forum/share-c.png) no-repeat; background-size:100% auto;}
+
+/*版块列表*/
+.community_list li{margin: 3px 0 0 0; border-top: #ddd 1px solid; background: #fff;}

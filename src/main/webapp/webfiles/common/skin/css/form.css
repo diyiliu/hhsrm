@@ -1,0 +1,13 @@
+/*表单错误提示*/
+.ui-error{width: 100%;height: auto;margin-bottom: 0px;display:;}
+.ui-error .ui-error-t-l{width: 53px;height: 26px;background: url(../images/error/error.gif) no-repeat top left;}
+.ui-error .ui-error-t-c{height:26px;background: url(../images/error/error_x.gif) repeat-x 0px 0;padding-left:20px;}
+.ui-error .ui-error-t-r{width: 4px;height: 26px;background: url(../images/error/error.gif) no-repeat -53px 0px;}
+.ui-error .ui-error-c-l{width: 53px;height:38px;background: url(../images/error/error.gif) repeat-y -57px 0;}
+.ui-error .ui-error-c-i{width: 53px;height:38px;background: url(../images/error/error.gif) no-repeat 0 -26px;}
+.ui-error .ui-error-c-c{height:auto;background: #BFD8FF;padding-left:20px;padding-top: 10px;color: red;}
+.ui-error .ui-error-c-r{width: 4px;height:auto;background: url(../images/error/error.gif) repeat-y -110px 0;}
+.ui-error .ui-error-b-l{width: 53px;height: 4px;background: url(../images/error/error.gif) no-repeat 0 -65px;}
+.ui-error .ui-error-b-c{height: 4px;background: url(../images/error/error_x.gif) repeat-x 0px -26px;}
+.ui-error .ui-error-b-r{width: 4px;height: 4px;background: url(../images/error/error.gif) no-repeat -53px -65px;}
+

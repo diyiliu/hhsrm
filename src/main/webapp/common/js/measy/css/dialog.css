@@ -1,0 +1,156 @@
+
+/*----------------弹出框:start--------------*/
+/*pop-box*/
+.popup{
+	position: absolute;
+	z-index: 91;
+	min-height: 50px;
+	overflow:hidden;
+	
+	border-color:#ddd;
+	border-style:solid;
+	border-width:0;
+}
+.popup.middle {
+	left: 5%;
+	right: 5%;
+	width: 270px;
+	border-radius: 6px;
+	margin: 0 auto;
+	
+	background-color: #ffffff;
+}
+.popup.top {
+	width:100%;
+	top:-100%;
+}
+.popup.bottom {
+	width:100%;
+	bottom:-100%;
+}
+/*pop-标题*/
+.popup-title {
+	text-align: center;
+	padding: 15px;
+	font-weight: 500;
+	font-size: 18px;
+	text-align: center;
+}
+/*pop-内容*/
+.popup-content {
+	text-align: center;
+	padding: 0 10px 10px 10px;
+	line-height: 1.2em;
+}
+/*pop-按钮*/
+.popup-handler {
+	text-align: center;
+	display: -webkit-box;
+	display: box;
+	
+	border-color:inherit;
+	border-style:inherit;
+	border-width:1px 0 0 0;
+}
+.popup-handler > a:last-child {
+	border-width:0;
+}
+
+.popup-handler > a {
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	padding: 12px;
+	display: block;
+	color: #222;
+	color: #007aff;
+	font-size: 17px;
+	
+	border-color:inherit;
+	border-style:inherit;
+	border-width:0 1px 0 0;
+}
+/*pop-遮罩*/
+.popup-mask{
+	background: #000;
+	opacity: .4;
+	position: absolute;
+	z-index: 90;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+/*actionsheet*/
+.actionsheet {
+	padding: 0 6px;
+}
+.actionsheet button {
+	margin: 0 !important;
+	padding: 0;
+	font-size: 16px;
+	line-height: 40px !important;
+	display: block;
+	width: 100%;
+	background: #e8e8e8;
+	color: #007aff;
+	border-radius: 0;
+	border-bottom: 1px solid #d2d2d6;
+}
+.actionsheet .actionsheet-group > button:first-child {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.actionsheet .actionsheet-group > button:last-child {
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	margin-bottom: 6px !important;
+}
+.actionsheet > button {
+	margin-bottom: 6px !important;
+	border-radius: 4px;
+}
+
+/*弹出框按钮点击色*/
+[class^="popup-handler-"]:active,.actionsheet button:active{
+	background-color:#d2d2d2;
+}
+
+/*特殊弹框样式*/
+.popup.middle.dialog{
+	left:0;
+	right:0;
+	width:auto;
+	overflow:visible;
+	border-radius:0;
+	background-color:transparent;
+}
+
+/*toast框*/
+.popup-toast-box{
+	position:absolute;
+	z-index:92;
+	bottom:-100%;
+	width:100%;
+	display:-webkit-box;
+	-webkit-box-pack:center;
+}
+.popup-toast{
+	background-color:rgba(0,0,0,.6);
+	display:block;
+	padding:10px;
+	border-radius:6px;
+	color:white;
+	font-size:12px;
+	max-width:90%;
+	max-height:40px;
+	overflow:hidden;
+}
+
+/*先将遮罩与弹出框隐藏*/
+.popup,.popup ~ .popup-mask,.popup-toast-box{
+	display:none;
+	opacity:0;
+}
+/*----------------弹出框:end--------------*/
+

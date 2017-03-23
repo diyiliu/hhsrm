@@ -1,0 +1,458 @@
+/* CSS Document */
+body {
+	background-color: #F9F8F4; /* #F9F8F4   #8fb8ce#a9c4cf,#cce2f7#fbfcfe*/
+	/*filter : progid:DXImageTransform.Microsoft.gradient(startColorStr=#5e92b7,endColorStr=#f3fffb);f3fffb*/
+	scrollbar-arrow-color: red;
+	scrollbar-base-color: #9f70cf;
+	scrollbar-dark-shadow-color: #6e9dc5;
+	scrollbar-track-color: while;
+	scrollbar-face-color: #add2da; /*#cee4fb#d4e6ea*/
+	scrollbar-shadow-color: #FFFFFF;
+	scrollbar-highlight-color: #000000;
+	scrollbar-3d-light-color: #bdcfe7;
+}
+
+table {
+	empty-cells: show; /*设置或检索当表格的单元格无内容时，是否显示该单元格的边框。*/
+	empty-cells: show !important;
+	border-collapse: separate !important;
+	border-collapse: collapse;
+	/*table-layout:fixed;   字数超出域时会隐藏内容*/
+}
+
+/*下划线*/
+.b_line {
+	border-bottom: 1px solid #000000;
+}
+
+.TableModel1,TableModel2,TableModel3 {
+	background-color: #fafeff; /*#f6ffff*/
+}
+
+.TableModel1 td,.TableModel2 td,.TableModel3 td {
+	border: 1px solid #abc7ce; /*#6d89b2  #023E8C #00573A*/
+	word-break: break-all;
+	text-overflow: ellipsis;
+}
+
+/*for common table*/
+.TableModel1 td {
+	font-size: 13px;
+	line-height: 24px;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+a {
+	blr: expression(this .   onFocus =       this .   blur () );
+}
+
+a:link,a:visited,a:hover {
+	text-decoration: none;
+}
+
+/*for result list table*/
+.TableModel2 td {
+	font-size: 12px;
+	line-height: 26px;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+.title {
+	background: #EFF6FF; /*#DAF1FC,E7F9E4*/
+	color: black; /*#0071b5*/
+	text-align: left;
+	width: 20%;
+}
+
+.pre {
+	background: #536782;
+	color: white;
+}
+
+/**/
+.bb {
+	border-collapse: collapse;
+}
+
+.bb tr {
+	background-color: expression('#FEFEE2,#FFF' .       split(',') [     
+		 rowIndex %       2 ]       ); /*#F6FFFF*/
+}
+
+/*.bb td{
+background-color:expression((this.cellIndex%2==0)?"":((this.parentElement.sectionRowIndex%2==0)?"green":"yellow"))
+background-color:expression('#FEFEE2,#FFF'.split(',')[cellndex%2]); 
+}*/
+.search_table td,.list_table td {
+	border: #abc7ce 1px solid;
+	/*#CCC#023E8C，#00573A，#023E8C,#ABAB00 #D5DDEE*/
+	color: #0071B5;
+	word-break: break-all;
+	text-overflow: ellipsis;
+	font-size: 13px;
+	line-height: 24px;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+/*for table head*/
+.headTr1 td {
+	font-size: 14px;
+	/*font-weight: bold;*/
+	letter-spacing: 2px;
+	color: #006699; /*#1b6f87,#06609f*/
+	height: 27px;
+	font-weight: 600;
+	text-align: left;
+}
+
+.headTr1 img {
+	star: expression(onmouseover =       function() {    
+			    this .   border =         1;
+	this
+	.bordercolor='#edf9ec';
+	this
+	.style.backgroundColor
+	='#edf9ec';
+}
+
+,
+onmouseout
+
+  
+
+=
+function
+
+ 
+
+(){
+this
+
+ 
+
+.border
+
+ 
+
+=
+0;
+this
+
+ 
+
+.bordercolor
+
+
+='';
+this
+
+
+	
+
+.style
+
+
+.backgroundColor
+
+ 
+
+='';
+}
+);
+}
+.headTr2 td {
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	color: #006699; /*#06609f*/
+	height: 27px;
+	padding-left: 6px;
+	text-align: left;
+}
+
+.headTr3 td {
+	background-color: #2E5168; /* #353c44 #15718E #3B7C9C #2E5168 #83ABB7*/
+	/*filter : progid:DXImageTransform.Microsoft.gradient(startColorStr=#ffffff,endColorStr=#2E5168);*/
+	font-size: 14px;
+	/*font-weight:bold;*/
+	letter-spacing: 2px;
+	color: #e1e2e3; /*#06609f,#e1e2e3*/
+	height: 30px;
+	padding-left: 8px;
+	text-align: left;
+}
+
+.headTr3 img {
+	star: expression(onmouseover =       function() {    
+			    this .   border =         1;
+	this
+	.bordercolor='#edf9ec';
+	this
+	.style.backgroundColor
+	='red'; /*edf9ec*/
+}
+
+,
+onmouseout
+
+  
+
+=
+function
+
+ 
+
+(){
+this
+
+ 
+
+.border
+
+ 
+
+=
+0;
+this
+
+ 
+
+.bordercolor
+
+
+='';
+this
+
+
+	
+
+.style
+
+
+.backgroundColor
+
+ 
+
+='';
+}
+);
+}
+.headTr4 td,.headTr5 td {
+	background-color: #DEF2FB; /*#e0efde*/
+	font-size: 14px;
+	/*font-weight:bold;*/
+	letter-spacing: 2px;
+	/*color:#000;    #06609f#e1e2e3*/
+	height: 30px;
+}
+
+.headTr5 td {
+	background-color: #536782;
+	font-weight: bold;
+	color: #FFF; /*#616378#1e8ecd*/
+}
+
+.headTr6 td { /*background-color:#DAF1FC*/
+	line-height: 27px;
+	font-weight: bold;
+	color: #0071b5; /*#616378#1e8ecd*/
+}
+
+.headTr7 td {
+	background-color: #8c8e8e;
+	font-size: 14px;
+	letter-spacing: 4px;
+	line-height: 25px;
+	font-weight: bold;
+	color: #FFF; /*#616378#1e8ecd*/
+}
+
+/*表格的横隔*/
+.band td {
+	background-color: #E7F9E4;
+	font-weight: 500;
+	color: #330033; /*#616378#1e8ecd*/
+}
+
+.title-action {
+	font-size: 13px;
+	cursor: hand;
+}
+
+.endTr1 td {
+	
+}
+
+/*search result item title style*/
+.list_item_tr td {
+	font-size: 13px;
+	letter-spacing: 1px;
+	color: #06609f;
+	height: 27px;
+	text-align: left;
+}
+
+/*item title bgcolor*/
+.TableModel1 .color_td {
+	background-color: #d8eff7;
+}
+
+/*table compart tr*/
+.compart_tr {
+	
+}
+
+/*input,textarea style
+input,textarea { behavior:url(../js/HTMLComponent.htc); }*/
+.input {
+	background-color: #FFFFFF;
+	FONT-SIZE: 10pt;
+	border: 1px solid #84a1bd;
+	height: 24px;
+	padding: 2px;
+	star: expression(onfocus =       function() {    
+		  this .   style .   borderColor =       'red';
+	this
+	.style.color='black'; /*#800000blue*/
+	this
+	.style.backgroundColor='#fff4de'; /*#e8fff7, #fff4de*/
+}
+
+,
+onblur
+
+  
+
+=
+function
+
+ 
+
+(){
+this
+
+ 
+
+.style
+
+
+.borderColor
+
+
+='
+#84a1bd
+
+
+';
+this
+
+
+	
+
+.style
+
+
+.color
+
+
+='';
+this
+
+ 
+
+.style
+
+
+.backgroundColor
+
+ 
+
+='';
+}
+);
+}
+textarea {
+	text-align: left;
+	border: 1px solid #84a1bd;
+	padding: 2px;
+}
+
+select {
+	font-family: Tahoma, Verdana, Arial, 宋体;
+	font-size: 9pt;
+	/*color: #000000;  #003366;#FF0000*/
+	border: #000 1px solid;
+}
+
+option {
+	background-color: #fff4de; /*#999999 CBE7FF #fff4de*/
+}
+
+table {
+	empty-cells: show;
+	border-collapse: collapse;
+}
+
+.head {
+	height: 27px;
+	letter-spacing: 3px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+}
+
+input[type="text"] {
+	FONT-SIZE: 10pt;
+	border: 1px solid #84a1bd;
+	height: 20px;
+	padding: 1px;
+}
+
+checkbox,radio {
+	border: 1px solid #023E8C;
+	background: red;
+	vertical-align: middle;
+	height: 16px;
+}
+
+input.TextInput {
+	ime-mode: active;
+	height: 18px;
+	border: 1 solid black;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	font-family: "Times New Roman", "SimSun";
+	font-size: 12px;
+	color: #000000
+}
+
+input.BtnInput {
+	font-size: 12px;
+	border: 1 solid black;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	font-family: "Times New Roman", "SimSun";
+	font-size: 12px;
+	color: #000000
+}
+
+.TableNoBorder {
+	font-size: 14px;
+	background-color: #EFF6FF
+}
+
+label {
+	display: inline-block;
+}
+
+label.error {
+	color: red;
+	margin-left: 0.5em;
+}

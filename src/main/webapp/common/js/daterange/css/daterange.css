@@ -1,0 +1,14 @@
+a{color:#000000}
+.day{float:left;display:inline-block;padding-top:2px;}
+.day ul li{float:left;padding:0 6px;height:20px;line-height:20px;}
+.day ul li.selected{background:#c2dff7;border-radius:5px;}
+.day ul li a{cursor:pointer;outline:none;text-decoration:none;}
+.day-selector{height:17px !important;border:1px solid #d3d3d3;margin-top:-1px;width:160px;text-align:center;}
+
+.select-btn{float:left;width:50px;padding-top:4px;margin-left:5px;}
+.select-btn a{display:inline-block;width:16px;height:16px;background:url(/common/js/daterange/images/select-arrow.png) no-repeat;background-color:#e2e2e2;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}
+.select-btn a:hover{background-color:#c2dff7;}
+.select-btn a.previous{background-position:0 0;}
+.select-btn a.next{background-position:0 -16px;margin-left:6px;}
+.select-btn a.previous:hover{background-position:-15px 0;}
+.select-btn a.next:hover{background-position:-15px -16px;}

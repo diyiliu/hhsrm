@@ -1,0 +1,10 @@
+/**新增，修改表单**/
+.ui-input-table{border-collapse:separate;border-spacing:0px;border-right:1px solid #dddddd;border-bottom:1px solid #dddddd;}
+.ui-input-table td{border-bottom:none;border-right:none;}
+
+/**文本框**/
+.input_text_short{line-height: 0px;}
+.input_text_middle{line-height: 0px}
+.input_text_long{line-height: 0px}
+
+

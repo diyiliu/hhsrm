@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hhsrm.iml" filepath="$PROJECT_DIR$/.idea/modules/hhsrm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hhsrm_main.iml" filepath="$PROJECT_DIR$/.idea/modules/hhsrm_main.iml" group="hhsrm" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hhsrm_test.iml" filepath="$PROJECT_DIR$/.idea/modules/hhsrm_test.iml" group="hhsrm" />
+    </modules>
+  </component>
+</project>

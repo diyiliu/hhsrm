@@ -1,0 +1,24 @@
+*{margin:0px;padding:0px;}
+html{height:100%;}
+body{overflow:hidden;margin:0px;padding:0px;}
+ul,li{list-style:none;margin:0px;padding:0px;font-size:12px;}
+img{border:none;}
+a{text-decoration:none;}
+table{border-collapse:collapse;}
+.clear{clear:both;}
+
+
+/* 弹出框按钮样式*/
+a.pushBtn b {margin:0px;cursor: pointer;white-space: nowrap;color: #666;font-weight: normal;height: 24px;line-height: 24px;font-size: 12px;padding: 0 7px 0 5px;padding-top:2px\9;background: url(../images/button/btnout_bg_right.gif) no-repeat right top;display: inline-block; +zoom: 1; +display: inline;}
+a.pushBtn:hover b{color: #147;font-size: 12px;background: url(../images/button/btnover_bg_right.gif) no-repeat right top;}
+
+.input_text_middle{height:18px\9;}
+.input_text_short{height:18px\9;}
+.input_text_long{height:18px\9;}
+
+.ui-search li input{margin-top:0px\9;padding-top:4px\9;}
+
+#allright{width:46px;height:19px;background: url(../images/icon/rightall.gif) no-repeat;border:0px;cursor:pointer;outline:none;display:inline-block}
+#addright{width:46px;height:19px;background: url(../images/icon/rightone.gif) no-repeat;border:0px;cursor:pointer;outline:none;display:inline-block}
+#addleft{width:46px;height:19px;background: url(../images/icon/leftone.gif) no-repeat;border:0px;cursor:pointer;outline:none;display:inline-block}
+#allleft{width:46px;height:19px;background: url(../images/icon/leftall.gif) no-repeat;border:0px;cursor:pointer;outline:none;display:inline-block}

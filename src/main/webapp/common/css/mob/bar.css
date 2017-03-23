@@ -1,0 +1,348 @@
+@charset "utf-8";
+/*----------------header,footer:start--------------*/
+header{
+	position:absolute;
+	top:0;
+	width:100%;
+	z-index:1;
+}
+footer{
+	position:absolute;
+	bottom:0;
+	width:100%;
+	z-index:1;
+}
+/*----------------header,footer:start--------------*/
+
+/*----------------titlebar:start--------------*/
+.titlebar{
+	position:relative;
+	min-height:40px;
+	
+	background-color:#3779d0;
+}
+.titlebar h1{
+	position: absolute;
+	display: block;
+	padding: 0;
+	font-size: 17px;
+	font-weight: 500;
+	left:50%;
+	top:50%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	white-space:nowrap;
+	width:80%;
+	text-align:center;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	z-index:1;
+	
+	color: #fff;
+}
+.titlebar a{
+	position: absolute;
+	display:block;
+	height:32px;
+	line-height:32px;
+	min-width:32px;
+	top:50%;
+	-webkit-transform: translateY(-50%);
+	font-size:14px;
+	z-index:2;
+	
+	color:#fff;
+}
+.titlebar a:active{
+	color:rgba(0,0,0,.3);
+}
+.titlebar a:first-child{
+	left:8px;
+}
+.titlebar a:last-child{
+	right:8px;
+}
+.titlebar a.left{
+	left:8px;
+}
+.titlebar a.right{
+	right:8px;
+}
+/*文字图标*/
+.titlebar .iconfont,.titlebar .icon{
+	font-size:24px;
+	width:24px;
+	height:24px;
+	line-height:24px;
+	display:inline-block;
+	overflow:hidden;
+	float:left;
+	position:relative;
+	top:50%;
+	-webkit-transform: translateY(-50%);
+}
+/*背景图标*/
+.titlebar .icon.back{
+	background-image:url(../img/titlebar/back.png);
+}
+.titlebar .icon.ok{
+	background-image:url(../img/titlebar/ok.png);
+}
+.titlebar .icon.me{
+	background-image:url(../img/titlebar/me.png);
+}
+.titlebar .icon{
+	background-size:100% auto;
+	background-repeat:no-repeat;
+	background-position:center top;
+}
+.titlebar a:active .icon{
+	background-position:center bottom;
+}
+/*----------------titlebar:end----------------*/
+
+/*----------------navbar:start--------------*/
+/*----------------navbar:start--------------*/
+.navbar{
+	display: block;
+	background-color:#aacdcf;
+	height:70px;
+}
+.navbar .nav{
+	position: relative;
+	display:inline-block;
+	float:left;
+}
+.navbar .nav .nav-title{
+	width: auto;
+	height:70px;
+	line-height:70px;
+	padding:0 25px 0 25px;
+	display:inline-block;
+	font-size:16px;
+	
+	color:white;
+}
+.navbar .nav .nav-title.active{
+	color:#3779d0;
+	background:url(../img/navbar/navbar-active.png) no-repeat left center;
+}
+.navbar .nav:hover{
+	background-color:#7caeb1;
+}
+/*navbar二级*/
+.subnav{
+	display:none;
+	position: absolute;
+	z-index: 2;
+	top:100%;
+	left:0px;
+}
+.navbar .nav:hover .subnav{
+	display:block;
+}
+.subnav li{
+	display: block;
+	background-color:rgba(255,255,255,.9);
+	background-color:white\0;/*ie8*/
+	filter:Alpha(opacity=90);
+	float:none;
+}
+.subnav li a{
+	display:  block;
+	padding:10px;
+	min-width:150px;
+	font-size: 14px;
+}
+/*----------------navbar:end--------------*/
+
+/*----------------tabbar:start--------------*/
+.tabbar{
+	display:table;
+	
+	background-color:#3779d0;
+	border-color:#ddd;
+	color:rgba(255,255,255,.6);
+}
+.tabbar .tab{
+	position:relative;
+	display:table-cell;
+	width:1%;
+	padding:5px 0;
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	border-color:inherit;
+}
+.tab-icon{
+	display:inline-block;
+	width: 24px;
+	height: 24px;
+	font-size:24px;
+	background-size:100% auto;
+	background-repeat:no-repeat;
+	background-position:center top;
+}
+.tab:active,.tab.active,.tab.current{
+	-webkit-box-sizing:border-box;
+	
+	color:white;
+}
+.tab:active .tab-icon,.tab.active .tab-icon,.tab.current .tab-icon{
+	background-position:center bottom;
+}
+.tab-label{
+	display: block;
+	font-size: 12px;
+	font-weight: 400;
+	height:12px;
+	line-height:12px;
+}
+.tab-label:only-child{
+	padding:11px 0;
+}
+.tab-icon+.tab-label{
+	margin:4px 0 0 0;
+}
+.tab-icon-home{
+	background-image:url(../img/tabbar/tab-home.png);
+}
+.tab-icon-resources{
+	background-image:url(../img/tabbar/tab-resources.png);
+}
+.tab-icon-forms{
+	background-image:url(../img/tabbar/tab-forms.png);
+}
+.tab-icon-staff{
+	background-image:url(../img/tabbar/tab-staff.png);
+}
+.tab-icon-more{
+	background-image:url(../img/tabbar/tab-more.png);
+}
+/*tabbar二级*/
+.subtab{
+	display:block;
+	position:fixed;
+	bottom:56px;
+	left:0;
+	width:100%;
+	max-height:0px;
+	overflow:auto;
+	transition:all 0.5s;
+	
+	background-color:rgba(255,255,255,.9);
+	background-color:white\0;/*ie8*/
+	filter:Alpha(opacity=90);
+	color:#555;
+}
+.tabbar .tab.active ul{
+	max-height:300px;
+}
+.subtab li{
+	display: block;
+	text-align:left;
+	padding:10px;
+}
+.subtab li:first-child{
+	margin-top:10px;
+}
+.subtab li:last-child{
+	margin-bottom:10px;
+}
+.subtab li a{
+	display:  block;
+	font-size: 14px;
+}
+.subtab li+.detail{
+	white-space:normal;
+	padding:0 10px 10px 10px;
+	text-align:left;
+}
+.subtab li+.detail a{
+	display:inline-block;
+	margin-right:10px;
+	margin-top:10px;
+}
+/*矩形*/
+.tabbar[data-tabtype="rect"]{
+	margin:0 10px;
+	border-radius:4px;
+	overflow:hidden;
+	
+	background-color:#fff;
+	border-style:solid;
+	border-width:0 1px;
+	color: #999;
+}
+.tabbar[data-tabtype="rect"] .tab{
+	border-style:solid;
+	border-top-width:1px;
+	border-bottom-width:1px;
+	border-right-width:0px;
+}
+.tabbar[data-tabtype="rect"] .tab:first-child{
+	border-left-width:0px;
+}
+.tabbar[data-tabtype="rect"] .tab:not(:first-child){
+	border-left-width:1px;
+}
+
+.tabbar[data-tabtype="rect"] .tab:active,.tabbar[data-tabtype="rect"] .tab.active{
+	background-color:#3779d0;
+	border-color:#3779d0;
+	color: white;
+}
+.tabbar[data-tabtype="rect"] .tab label:only-child{
+	padding:4px 0;
+}
+/*滑片形*/
+.tabbar[data-tabtype="slide"]{
+	background-color:#fff;
+	color: #999;
+}
+.tabbar[data-tabtype="slide"] .tab{
+	border-style:solid;
+	border-width:0 0 1px 0;
+}
+.tabbar[data-tabtype="slide"] .tab:active,.tabbar[data-tabtype="slide"] .tab.active{
+	border-width:0 0 3px 0;
+	
+	color:#3779d0;
+	border-color:#3779d0;
+}
+.tabbar[data-tabtype="slide"] .tab label:only-child{
+	padding:8px 0;
+}
+/*箭头形*/
+.tabbar[data-tabtype="arrow"] .tab{
+	overflow:visible;
+}
+.tabbar[data-tabtype="arrow"] .tab.active:after{
+	content:'';
+	position:absolute;
+	top:100%;
+	left:50%;
+	transform:translateX(-50%);
+	width:0;
+	height:0;
+	border-width:5px;
+	border-style:solid;
+	border-color:transparent;
+	border-top-color:#3779d0;
+}
+/*tabbar固定列*/
+.tabbar[data-cols]{
+	display:-moz-box;
+	display:-webkit-box;
+	display: box;
+	
+	-moz-box-orient:horizontal;
+	-webkit-box-orient:horizontal;
+	box-orient:horizontal;
+}
+.tabbar[data-cols="5"] .tab{
+	width:75px;
+	float:left;
+	display:block;
+}
+/*----------------tabbar:end--------------*/

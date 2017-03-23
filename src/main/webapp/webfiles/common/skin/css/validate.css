@@ -1,0 +1,4 @@
+label {display: inline-block;margin-left:4px}
+label.error {color: red;}
+
+.errorTip{margin-left:0px !important;margin-left:-4px\9 !important}

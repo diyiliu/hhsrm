@@ -1,0 +1,628 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+/* flexigrid main */
+.flexigrid{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border:0 none;
+	overflow: hidden;
+	color: #000;
+	position: relative;
+}
+
+.flexigrid.hideBody{
+	height: 26px !important;
+	border-bottom: 1px solid #ccc;
+}
+
+.ie6fullwidthbug{
+	border-right: 0px solid #ccc;
+	padding-right: 2px;	
+}
+
+/* flexigrid title */
+.flexigrid .mDiv{
+	height:25px;
+	background:url(images/ftitle.gif) repeat-x left center;
+	border:0 none;
+	border-bottom:1px solid #98B7DD;
+	display:block;
+	overflow:hidden;
+	white-space:nowrap;
+	position: relative;
+}
+.flexigrid .mDiv .ftitle{
+	height:25px;
+	line-height:25px;
+	margin:0px;
+	padding:0px 5px;
+	background:none;
+	overflow:hidden;
+	white-space:nowrap;
+	color:#114477;
+	font-weight:bold;
+}
+.flexigrid div.mDiv div.ptogtitle{
+	display:none;
+}
+/*
+.flexigrid div.mDiv div.ptogtitle{
+	position: absolute;
+	top: 4px;
+	right: 3px;
+	padding: 0px;
+	height: 16px;
+	width: 16px;
+	overflow: hidden;
+	border: 1px solid #82a7d5;
+	cursor: pointer;
+}
+
+.flexigrid div.mDiv div.ptogtitle:hover{
+	background-position: left -2px;
+	border-color: #bbb;
+}
+			
+.flexigrid div.mDiv div.ptogtitle span{
+	display: block;
+	border-left: 1px solid #eee;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #ddd;
+	width: 14px;
+	height: 14px;
+	background: url(images/uup.png) no-repeat center;
+}
+
+.flexigrid div.mDiv div.ptogtitle.vsble span{
+	background: url(images/ddn.png) no-repeat center;			
+}
+*/
+
+/* flexigrid toolbar */
+.flexigrid .tDiv{
+	height:30px;
+	background:#E3ECF7 url() repeat-x left center;
+	border:0px solid #799BC4;
+	border-top:0px;
+	border-bottom:0px;
+	display:block;
+	overflow:hidden;
+	white-space:nowrap;
+}
+.flexigrid .tDiv .tDiv2{
+	padding-top:2px;
+}
+.flexigrid .tDiv .fbutton{
+	float: left;
+	display: block;
+	height:25px;
+	cursor: pointer;
+	margin:0px 2px;
+}
+.flexigrid .tDiv .fbutton div{
+	float: left;
+	height:25px;
+	margin-left:3px;
+	padding:0px 5px 0px 2px;
+}
+.flexigrid .tDiv .fbutton div span.fbutton-text{
+	float: left;
+	display: block;
+	height:25px;
+	/*line-height:26px;*/
+	font-size:12px;
+	padding-top:5px;
+	color:#2b4264;
+	overflow:hidden;
+}
+.flexigrid .tDiv .fbutton div span.fbutton-text img{
+	vertical-align:middle;
+	margin:-1px 5px -2px 0px;
+	width:16px;
+	heigh:16px;
+}
+
+.flexigrid .fbutton.fbOver{
+	background:url(images/toolbtn.gif) no-repeat 0 0;
+}
+
+.flexigrid .fbutton.fbOver div{
+	background:url(images/toolbtn.gif) no-repeat right -25px;
+}
+.flexigrid .btnseparator{
+	display:block;
+	float: left;
+	height: 18px;
+	border-left: 1px solid #82a7d5;
+	border-right: 1px solid #fff;
+	margin:3px 2px 0px 2px;
+	font-size:0px;
+}
+
+/* flexigrid table header */
+.flexigrid .hDiv{
+	position:relative;
+	background:#E6EEF7 url(images/ftheader.gif) repeat-x left bottom;
+	border:1px solid #799BC4;
+	/*border-left:0px;
+	border-right:0px;*/
+	padding:0px;
+	margin:0px;
+	width:100%;
+	height:25px;
+	display:block;
+	overflow:hidden;
+}
+.flexigrid .hDiv .hDivBox{
+	float:left;
+	padding:0px;
+	padding-right:40px;
+}
+
+.flexigrid .hDiv th{
+	height:24px;
+	text-align: left;
+	border-right: 1px solid #82a7d5;
+	border-left: 1px solid #fff;
+	padding:0px;
+	/*vertical-align: top !important;*/
+	font-weight: normal;
+	cursor: default;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.flexigrid .hDiv th div{
+	padding:0px 5px;
+	height:25px;
+	margin:0px;
+	line-height:25px;
+}
+.flexigrid .hDiv th div input{
+	vertical-align: middle;
+	margin-top:3px;
+}
+.flexigrid .hDiv th.thOver div{
+	/*padding-bottom:4px;
+	border-bottom: 1px solid orange;*/
+}
+.flexigrid div.hDiv th.sorted{
+	background:#f7e3bf url(images/ftheader-sorted.gif) repeat-x left bottom;
+}
+.flexigrid div.hDiv th.sorted div{
+	/*border-bottom:0px;
+	padding-bottom: 5px;*/
+}
+.flexigrid .hDiv th.thMove{
+	background: #fff;
+	color: #fff;
+}
+	
+.flexigrid .hDiv th div.sdesc{
+	background: url(images/dn.png) no-repeat center top;
+}	
+
+.flexigrid .hDiv th div.sasc{
+	background: url(images/up.png) no-repeat center top;
+}	
+
+/* flexigrid table body */			
+.flexigrid div.bDiv{
+	position:relative;
+	border: 1px solid #9EB6CE;
+	border-top: 0px;
+	/*border-left:0px;
+	border-right:0px;*/
+	background: #fff;
+	overflow: auto;
+}
+.flexigrid div.bDiv table.autoht{
+	border-bottom: 0px;
+	margin-bottom: 0px;
+}
+.flexigrid div.bDiv table{
+	border-bottom: 1px solid #9EB6CE;
+	margin-bottom:10px;
+}
+.flexigrid .bDiv td {
+	text-align: left;
+	border-right: 1px solid #9EB6CE;
+	border-left: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	padding:0px;
+	height:25px;
+	vertical-align: middle !important;	
+}
+.flexigrid .bDiv td div{
+	display:block;
+	padding:3px 5px;
+	overflow: hidden;
+	/*white-space: nowrap;*/
+	word-wrap:break-word;
+	word-break:normal;
+}
+.flexigrid .bDiv tr td.sorted{
+	background: #f3f3f3;
+	border-right: 1px solid #82a7d5;
+	border-bottom: 1px solid #f3f3f3;
+}
+.flexigrid .bDiv tr.erow td{
+	background: #F0F0F0;
+	border-bottom: 1px solid #f7f7f7;
+}
+.flexigrid .bDiv tr.erow td.sorted{
+	background: #e3e3e3;
+	border-bottom: 1px solid #e3e3e3;
+}	
+/*.flexigrid div.bDiv tr:hover td, 
+.flexigrid div.bDiv tr:hover td.sorted,*/
+.flexigrid div.bDiv tr.trOver td.sorted, 
+.flexigrid div.bDiv tr.trOver td{
+	background: #d9ebf5;
+	border-left: 1px solid #eef8ff;
+	border-bottom: 1px dotted #a8d8eb;
+}
+			
+/*.flexigrid div.bDiv tr.trSelected:hover td, 
+.flexigrid div.bDiv tr.trSelected:hover td.sorted,*/
+.flexigrid div.bDiv tr.trOver.trSelected td.sorted, 
+.flexigrid div.bDiv tr.trOver.trSelected td,
+.flexigrid tr.trSelected td.sorted, 
+.flexigrid tr.trSelected td{
+	background: #d5effc url(images/hl.png) repeat-x top;
+	border-right: 1px solid #82A7D5;
+	border-left: 1px solid #eef8ff;
+	border-top: 0px solid #a8d8eb;
+	border-bottom: 1px solid #a8d8eb;
+}
+			
+/* flexigrid hide/show col */
+.flexigrid div.nBtn{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 24px;
+	width: 15px;
+	background: #E6EEF7 url(images/ftheader.gif) repeat-x left bottom;
+	border: 0 none;
+	border-left: 1px solid #799BC4;
+	margin-top: 1px;
+	cursor: pointer;
+	z-index: 900;
+	display: none;
+}
+		
+.flexigrid div.nBtn div{
+	height: 24px;
+	width: 15px;
+	border-left: 1px solid #fff;
+	float: left;
+	background: url(images/ddn.png) no-repeat center center;
+}		
+
+.flexigrid div.nBtn.srtd{
+}
+.flexigrid div.nDiv{
+	position: absolute;
+	left: 0px;
+	/*background: #eee url(images/line.gif) repeat-y -1px top;*/
+	background-color:#eee;
+	border: 1px solid #82a7d5;
+	border-top: 0px;
+	overflow: auto;
+	z-index: 999;
+}
+
+.flexigrid div.nDiv table{
+	margin: 2px;
+	border:0px;
+}
+.flexigrid div.nDiv td{
+	/*padding: 2px 3px;*/
+	height:25px;
+	border: 1px solid #eee;
+	cursor: default;
+}
+.flexigrid div.nDiv tr:hover td, 
+.flexigrid div.nDiv tr.ndcolover td{
+	background: #d5effc url(images/hl.png) repeat-x top;
+	border: 1px solid #a8d8eb; 
+}
+/* 列的右边线条颜色 */	
+.flexigrid div.nDiv td.ndcol1{
+	width:25px;
+	text-align:center;
+	border-right: 1px solid #82a7d5;
+}
+/* 列的左边线条颜色 */		
+.flexigrid div.nDiv td.ndcol2{
+	border-left: 1px solid #fff;
+	padding:0px 10px 0px 3px;
+	color:#345E96;
+}
+
+.flexigrid div.nDiv tr:hover td.ndcol1,
+.flexigrid div.nDiv tr.ndcolover td.ndcol1{
+	border-right: 1px solid #82a7d5;
+}
+		
+.flexigrid div.nDiv tr:hover td.ndcol2,
+.flexigrid div.nDiv tr.ndcolover td.ndcol2{
+	border-left: 1px solid #eef8ff;
+}
+
+
+/* flexigrid resizecol */
+.flexigrid div.cDrag{
+	position: absolute;
+	float: left;
+	z-index: 2;
+	overflow: visible;
+}
+.flexigrid div.cDrag div{
+	float: left;
+	background: none;
+	display: block;
+	position: absolute;
+	height: 25px;
+	width: 5px;
+	cursor: col-resize;
+}
+.flexigrid div.cDrag div:hover, .flexigrid div.cDrag div.dragging{
+	background: url(images/line.gif) repeat-y 2px center;
+}
+
+/* flexigrid colmove */
+.colCopy{
+	height: 25px;
+	border: 1px solid #82a7d5;
+	background: #E6EEF7 url(images/ftheader.gif) repeat-x left bottom;
+	white-space: nowrap;
+	overflow: hidden;
+}	
+.colCopy div{
+	line-height:25px;
+	padding:0px 5px;
+	font-size:12px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.flexigrid .hDiv span.cdropleft, .flexigrid .hDiv span.cdropright{
+	display: block;
+	width: 9px;
+	height: 25px;
+	position: relative;
+	top: -25px;
+	margin-bottom: -25px;
+	z-index: 3;
+}
+.flexigrid .hDiv span.cdropleft{
+	/*background: url(images/cdrop_to.gif) no-repeat 0px top;*/
+	border-left:2px solid #ff0000;
+	left:-2px;
+}
+
+.flexigrid .hDiv span.cdropright{
+	/*background: url(images/cdrop_to.gif) no-repeat 0px top;*/
+	border-right:2px solid #ff0000;
+	right:-2px;
+	float: right;
+}
+
+/* flexigrid pager */
+.flexigrid .pDiv{
+	display:block;
+	height:30px;
+	background: url(images/fpager.gif) repeat-x left bottom;
+	border: 1px solid #82a7d5;
+	border-top: 0px;
+	/*border-left:0px;
+	border-right:0px;*/
+	overflow: hidden;
+	white-space: nowrap;
+}
+/* 2009-12-10 
+.flexigrid div.pDiv div.pDiv2{
+	margin-top:3px;
+	float: left;
+	width: 1024px;
+}	
+	
+.flexigrid div.pGroup{
+	float: left;
+	background: none;
+	height: 25px;
+	margin: 0px 5px;
+}
+.flexigrid div.pDiv .pPageStat, .flexigrid div.pDiv .pcontrol{
+	position: relative;
+	top: 5px;
+	overflow: visible;
+}
+
+.flexigrid div.pDiv input{
+	vertical-align: text-top;
+	position: relative;
+	top: -5px;
+}*/
+
+/* 2009-12-10
+.flexigrid div.pGroup a,
+.flexigrid div.pGroup a span{
+	display:block;
+	float:left;
+	width:22px;
+	height:22px;
+	cursor:pointer;
+}
+
+.flexigrid div.pGroup a:hover{
+	
+}
+*/
+/* -- 2009-12-10 add --- */
+.flexigrid div.pDiv2 table td{
+	height:30px;
+	padding:0px 2px;
+	white-space:nowrap;
+	overflow:hidden;
+}
+.flexigrid div.pDiv2 a{
+	display:block;
+	padding:1px;
+	width:21px;
+	height:21px;
+	cursor:pointer;
+}
+.flexigrid div.pDiv2 a span{
+	display:block;
+	width:20px;
+	height:20px;
+	cursor:pointer;
+}
+.flexigrid div.pDiv2 a:hover{
+	padding:0px;
+	border:1px solid #7EABCD;
+	background:url(images/pagerBtn-hoverBg.gif) repeat-x left bottom;
+}
+
+/* --------------------- */
+
+.flexigrid .jumpPageno{
+	width:35px;
+	height:18px;
+	padding:0px;
+}		
+.flexigrid a.pSearch{
+	background: url(images/magnifier.png) no-repeat center center;
+}
+
+.flexigrid a.pFirst span{
+	background: url(images/first.gif) no-repeat center center;
+}
+	
+.flexigrid a.pPrev span{
+	background: url(images/prev.gif) no-repeat center center;
+}
+
+.flexigrid a.pNext span{
+	background: url(images/next.gif) no-repeat center center;
+}
+
+.flexigrid a.pLast span{
+	background: url(images/last.gif) no-repeat center center;
+}
+
+.flexigrid a.pFirst-disabled span{
+	background: url(images/first-disabled.gif) no-repeat center center;
+}
+	
+.flexigrid a.pPrev-disabled span{
+	background: url(images/prev-disabled.gif) no-repeat center center;
+}
+
+.flexigrid a.pNext-disabled span{
+	background: url(images/next-disabled.gif) no-repeat center center;
+}
+
+.flexigrid a.pLast-disabled span{
+	background: url(images/last-disabled.gif) no-repeat center center;
+}
+	
+.flexigrid a.pReload span{
+	background: url(images/refresh.gif) no-repeat center center;
+}
+	
+.flexigrid a.pReload.loading span{
+	background: url(images/load.gif) no-repeat center center;
+}										
+
+/* iDiv */
+.flexigrid div.iDiv{
+	position: absolute;
+	border: 1px solid #316ac5;
+	overflow: visible;
+	background: none;
+}
+	
+.flexigrid div.iDiv input, .flexigrid div.iDiv select, .flexigrid div.iDiv textarea{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+		
+.flexigrid div.iDiv input.tb{
+	border: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	background: none;
+}			
+
+/* 水平改变grid宽度 */
+.flexigrid div.hGrip{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 5px;
+	width: 5px;
+	background: url(images/line.gif) repeat-x center;
+	margin-right: 1px;
+	cursor: col-resize;
+}
+	
+.flexigrid div.hGrip:hover, .flexigrid div.hGrip.hgOver{
+	border-right: 1px solid #999;				
+	margin-right: 0px;
+}
+
+/* 竖直改变gird高度 */
+.flexigrid div.vGrip{
+	height: 5px;
+	overflow: hidden;
+	position: relative;
+	background: #fafafa url(images/wbg.gif) repeat-x 0px -1px;
+	border: 1px solid #ccc;
+	border-top: 0px;
+	text-align: center;
+	cursor: row-resize;
+}
+			
+.flexigrid div.vGrip span{
+	display: block;
+	margin: 1px auto;
+	width: 20px;
+	height: 1px;
+	overflow: hidden;
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;	
+	background: none;
+}
+.gBlock{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	background-color:#ffffff;
+	opacity: 0.50;
+    filter:alpha(opacity=50);
+	z-index:1000;
+	display:none;
+}
+.innerLoading{
+	position:absolute;
+	left:50%;
+	top:50%;
+	width:200px;
+	height:40px;
+	line-height:40px;
+	margin-left:-100px;
+	margin-top:-20px;
+	padding-left:40px;
+	border:2px solid #6593CF;
+	background:#fff url(images/load.gif) no-repeat 10px center;
+	z-index:1100;
+	display:none;
+}		

@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+body,html{
+	overflow:hidden;
+}
+#_layer_{
+	overflow:hidden;
+	width:100%;
+	height:100px;
+}
+#_layer_ #_MaskLayer_{
+	filter: alpha(opacity=90);
+	-moz-opacity: 0.9;
+	opacity: 0.9;
+	background-color:white;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+#_layer_ #_wait_{
+	z-index:1001;
+	position:absolute;
+	color:#333;
+	top:46%;
+	width:98%;
+	text-align:center;
+}
+#_layer_ img{
+	vertical-align:middle;
+	margin-right:10px;
+}

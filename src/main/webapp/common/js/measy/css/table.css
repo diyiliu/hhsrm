@@ -1,0 +1,109 @@
+/*---------------表格table-start(excel风格)---------------*/
+.table-excel,.table-excel th,.table-excel td{
+	border:solid #dfdfdf;
+}
+.table-excel{
+	border-collapse:collapse;
+	border-width:1px 0 0 1px;
+}
+.table-excel th,.table-excel td{
+	padding:8px 4px;
+	border-width:0 1px 1px 0;
+}
+.table-excel th{
+	background-color:#424954;
+	color:white;
+}
+.table-excel td{
+	text-align:left;
+	color:#767676;
+}
+.table-excel tr:nth-child(odd){
+	background-color:#fafafa;
+}
+.table-excel tr:nth-child(even){
+	background-color:#fff;
+}
+.table-excel tr:hover{
+	background-color:#d4ebe6;
+}
+/*表格分页*/
+.table-excel tfoot td:hover{
+	background:transparent;
+}
+.table-excel tfoot td label{
+	vertical-align:middle;
+}
+.table-excel tfoot td input[type="text"],.table-excel tfoot td select{
+	height:20px;
+	text-align:center;
+	vertical-align:middle;
+}
+.table-excel tfoot td input[type="text"]{
+	width:30px;
+}
+.table-excel tfoot td a{
+	background-image:url(../img/table/icon_pagin.png);
+	background-repeat:no-repeat;
+	background-position:0 0;
+	display:inline-block;
+	width:20px;
+	height:20px;
+	vertical-align:middle;
+	-webkit-transition:all 0.3s;
+	transition:all 0.3s;
+}
+.table-excel tfoot td a.start{
+	background-position:0 0;
+}
+.table-excel tfoot td a.prev{
+	background-position:-20px 0;
+}
+.table-excel tfoot td a.next{
+	background-position:-40px 0;
+}
+.table-excel tfoot td a.end{
+	background-position:-60px 0;
+}
+.table-excel tfoot td a.start:hover{
+	background-position:0 -20px;
+}
+.table-excel tfoot td a.prev:hover{
+	background-position:-20px -20px;
+}
+.table-excel tfoot td a.next:hover{
+	background-position:-40px -20px;
+}
+.table-excel tfoot td a.end:hover{
+	background-position:-60px -20px;
+}
+/*---------------表格table-end(excel风格)---------------*/
+
+/*---------------表格table-start(bootstrap风格)---------------*/
+.table-bootstrap{
+	color:#797979;
+	border-width:0;
+	border-collapse:collapse;
+}
+.table-bootstrap th,.table-bootstrap td{
+	border:#dddddd solid;  
+    border-width: 0 0 1px 0;
+}
+.table-bootstrap th{
+	font-weight:bold;
+	border-width: 0 0 2px 0;
+}
+.table-bootstrap td,.table-bootstrap th{
+	text-align:left;
+	padding:15px 4px;
+}
+
+/*---------------表格table-end(bootstrap风格)---------------*/
+
+/*global里有此样式，但是由于优先级问题所以放在表格样式的最下面最为稳妥*/
+.text-center,td.text-center,th.text-center{
+	text-align:center;
+}
+.text-right,td.text-right,th.text-right{
+	text-align:right;
+}

@@ -1,0 +1,24 @@
+html,#login_body{height:100%;margin:0px;padding:0px;overflow:auto;overflow-x:hidden}
+#login_bg{width:1024px;min-height:603px;height:100%;background:url(../images/login/login_bg.jpg) repeat-y;margin:0px auto;position:absolute;left:50%;margin-left:-512px;}
+#login_top{width:1024px;height:105px;line-height:105px;border:0px;padding-top:10px;}
+#login_top_content{width:100%;height:94px;border:0px;padding:15px 0px 0px 20px;}
+#top_logon{background:url(../images/login/logo.png) no-repeat;width:212px;height:87px;}
+#login_center{position:absolute;top:50%;margin-top:-336px;}
+#login_center_left{background:url(../images/login/left_content.png) no-repeat;height:466px;width:519px;float:left;}
+#login_center_right{background:url(../images/login/right_bg.png) no-repeat;height:466px;width:505px;float:right;}
+#login_center_right_top{background:url(../images/login/right_top.png) no-repeat;height:145px;width:290px;}
+#login_center_right_bottom{background:url(../images/login/right_bottom.png) no-repeat;height:301px;width:491px;position:relative;margin:0px 7px;}
+#login_center_right_bottom ul{width:310px;line-height:32px;letter-spacing:0.3em;color:#3f555b;list-style:none;position:absolute;top:80px;left:35px;margin:0 56px;padding:0px}
+#login_center_right_bottom li{width:310px;height:32px;margin-bottom:7px;margin-bottom:3px\9;color:#666;font-size:16px; font-weight:700;position:relative;}
+#login_bottom{background:url(../images/login/5.png) no-repeat;float:right;height:40px;width:271px;}
+.inputwarn{width: 70px; height: 30px; float: left;margin-left:-3px\9;}
+.userinfo_out{background:#fff;width:250px;height:30px; line-height:30px;display:inline-block;border:1px solid #557ca2;position:absolute;left:42px;float:left}
+.login_input{height:30px; line-height:28px;width:180px;float:left;border:none;margin-left:-3px\9;margin-right:-3px\9}
+.checkcode_out{background:#fff;width:185px;height:30px; line-height:30px;display:inline-block;border:1px solid #557ca2;position:absolute;left:42px;float:left}
+.logoin_input_code{width:115px;height:30px; line-height:28px;float:left; border:none;margin-left:-3px\9;margin-right:-3px\9;}
+.check_box{display:block;float:left;position:absolute;bottom:81px;left:144px;}
+.fl{float:left;display:inline-block;margin-right:10px;}
+.button_login_original{width:222px;height:42px;border:none;background:url(../images/login/btn_login.png) no-repeat 0 -71px; float:left;position:absolute;bottom:38px;left:130px;cursor:pointer;outline:none;}
+.button_login_shadow{width:222px;height:29px;border:none;background:url(../images/login/btn_login.png) no-repeat 0 -42px; float:left;position:absolute;bottom:9px;left:130px;}
+
+#login_center_right_bottom li #imgRnd{cursor: pointer;position:absolute;top:3px;right:16px;right:18px\9;height:25px;width:60px;float:right}

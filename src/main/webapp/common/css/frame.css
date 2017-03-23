@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+/*reset*/
+body{font:12px/16px; color:#000;}
+body,div,p,ul,li{ padding:0px; margin:0px;}
+/*fixed mod*/
+.fixed-box{position:relative; height:100%; overflow:hidden;}
+.fixed-side{ position:absolute;color:#000; top:0px; left:0px; width:230px;}
+.fixed-main{position:relative;overflow:hidden; margin-left:236px;}
+.fixed-bar{ position:absolute; z-index:3; font-size:0px; background-color:#4489BC; line-height:0px; overflow:hidden; top:0px; left:230px; width:6px; cursor:w-resize}
+.closebar{ position:absolute; width:6px; height:10px; font-size:0px;overflow:hidde; background:url(../images/main/leftmain.png) no-repeat center center;}
+.rightp{background:url(../images/main/rightmain.png) no-repeat center center;}

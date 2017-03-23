@@ -1,0 +1,262 @@
+/*----------------------------chat:start----------------------------*/
+/*--------------------三角形-top----------------------*/
+.triangle-up {
+    width:0; 
+    height:0; 
+    border-left:50px solid transparent;
+    border-right:50px solid transparent;
+    border-bottom:70px solid red;
+}
+/*等边三角形*/
+.triangle-eq{  
+  width: 0;  
+  height: 0;
+  border-left: 50px solid transparent;  
+  border-right: 50px solid transparent;  
+  border-bottom: 94px solid navy;
+}
+.triangle-down {
+    width:0; 
+    height:0; 
+    border-left:50px solid transparent;
+    border-right:50px solid transparent;
+    border-top:70px solid red;
+}
+
+.triangle-left {
+    width:0; 
+    height:0; 
+    border-top:50px solid transparent;
+    border-bottom:50px solid transparent; 
+    border-right:70px solid red; 
+}
+.triangle-right {
+    width:0; 
+    height:0; 
+    border-top:50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 70px solid red;
+}
+
+/*--------------------三角形-end----------------------*/
+/*五边形向下*/
+.pentagon-down{
+	width:200px;
+	height:30px;
+	background-color:#007bff;
+	position:relative;
+	margin-bottom:15px;
+}
+.pentagon-down:after{
+	position:absolute;
+	left:0;
+	top:30px;
+	content:'';
+	
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 15px 100px 0 100px;
+	border-color: #007bff transparent transparent transparent;
+
+}
+/*-菱形-*/
+/*.rhombus{
+	width: 50px;
+	height:50px;
+	background-color:red;
+	-webkit-transform: rotate(-45deg);
+	 -webkit-transform-origin: 0 100%;
+	 margin: 30px 0 30px 30px;
+}*/
+/*菱形*/
+.rhombus{
+   width: 0;   
+   height: 0;   
+   border-left: 40px solid transparent;   
+   border-right: 40px solid transparent;   
+   border-bottom: 60px solid red;
+   margin:0 0 65px 0; 
+}  
+.rhombus:after {  
+   content:"";  
+   position: absolute;
+   width: 0;
+   height: 0;
+   border-left: 40px solid transparent;
+   border-right: 40px solid transparent; 
+   border-top: 60px solid red;
+   margin: 60px 0 0 -40px;
+}
+/*菱形六边形*/
+.hexagon {
+  position: relative;
+  width: 200px; 
+  height: 115.47px;
+  background-color: #64C7CC;
+  margin: 57.74px 0;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+}
+
+.hexagon:before {
+  bottom: 100%;
+  border-bottom: 57.74px solid #64C7CC;
+}
+
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  border-top: 57.74px solid #64C7CC;
+}
+/*-平行四边形-*/
+.parallelogram {  
+   width: 130px;   
+   height: 75px;  
+   background: red;  
+     
+   -webkit-transform: skew(20deg);
+}
+/*-梯形-*/
+.trapezium {  
+   height: 0;   
+   width: 80px;  
+   border-bottom: 80px solid blue;  
+   border-left: 40px solid transparent;  
+   border-right: 40px solid transparent;  
+}
+/*漏斗*/
+.funnel{
+	height:0;
+	width:40px;
+	border-bottom:60px solid blue;
+	border-top:60px solid blue;
+	border-left:40px solid transparent;  
+	border-right:40px solid transparent;  
+}
+/*十二星形*/
+.twelve-point-star{
+	margin:50px 0 0 0;
+}
+.twelve-point-star,.twelve-point-star:before,.twelve-point-star:after{  
+   height: 50px; 
+   width: 50px;
+   background: orange;
+   border-radius:4px;
+}  
+.twelve-point-star:before {  
+   content:"";
+   position: absolute; 
+   -webkit-transform: rotate(30deg);
+}  
+.twelve-point-star:after {
+   content:"";  
+   position: absolute;  
+   -webkit-transform: rotate(-30deg);  
+}
+/*六星形*/
+.six-point-star {
+   width: 0;   
+   height: 0;   
+   border-left: 50px solid transparent;   
+   border-right: 50px solid transparent;   
+   border-bottom: 80px solid red;
+   margin:30px 0; 
+}  
+.six-point-star:after {  
+   content:"";  
+   position: absolute;
+   width: 0;
+   height: 0;
+   border-left: 50px solid transparent;
+   border-right: 50px solid transparent; 
+   border-top: 80px solid red;
+   margin: 30px 0 0 -50px;
+}
+/*六边形*/
+.octagon {  
+   width: 100px;   
+   height: 100px;   
+   background: red;  
+}  
+.octagon:before {  
+   height: 0;  
+   width: 40px;  
+   content:"";  
+   position: absolute;   
+   border-bottom: 30px solid red;  
+   border-left: 30px solid white;   
+   border-right: 30px solid white;   
+}  
+.octagon:after {  
+   height: 0;  
+   width: 40px;  
+   content:"";  
+   position: absolute;   
+   border-top: 30px solid red;   
+   border-left: 30px solid white;    
+   border-right: 30px solid white;   
+   margin: 70px 0 0 0;  
+}
+/*鸡蛋*/
+.egg {  
+   display:block;  
+   width:126px;
+   height:180px;  
+   margin-top:80px;
+   background-color:green;
+   border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+}
+/*不完整的圆*/
+.pacman {  
+  width: 0px;  
+  height: 0px;  
+  border-right: 60px solid transparent;  
+  border-top: 60px solid red;  
+  border-left: 60px solid red;  
+  border-bottom: 60px solid red;  
+  border-radius: 60px;
+}
+/*八卦圆*/
+.biohazard {
+  width: 0;  
+  height: 0;  
+  border-bottom: 60px solid black; 
+  border-top: 60px solid black;
+  border-left: 60px solid yellow; 
+  border-right: 60px solid yellow;
+  border-radius: 60px;
+}
+/*心形*/
+.heart {   
+    position: relative;
+	width:140px;
+	height:118px;
+}  
+.heart:before, .heart:after {  
+    position: absolute;  
+    content: "";  
+    
+	top: 0;  
+    width: 70px;  
+    height: 115px;  
+    background: red;
+    border-radius: 50px 50px 0 0;  
+    -webkit-transform: rotate(-45deg);
+}
+.heart:before{
+	left:16px;
+}
+.heart:after {   
+    right:21px;   
+    -webkit-transform: rotate(45deg);
+}
+/*----------------------------chat:end----------------------------*/
+

@@ -1,0 +1,20 @@
+.lhgdg_top_default .lhgdg_title_icon_default{background:#d32151;color:#fff;height:35px;line-height:35px;padding:0px 5px;}
+.lhgdg_title_icon_default .lhgdg_title_default{margin-top:0px;}
+.lhgdg_top_default .lhgdg_icon_default{display:none;}
+.lhgdialog_default .lhgdg_btnBar_default{padding: 10px 0;}
+.lhgdg_btnBar_default a.lhgdg_button_default{background:#d32151;padding:2px 0px 2px 20px;height:auto}
+.lhgdg_btnBar_default a.lhgdg_button_default em{background:#d32151;padding-right:20px;color:#fff;display:inline-block;height: 27px;line-height: 24px;}
+.lhgdialog_default .lhgdg_bottom_default{background:#9fadb5}
+.lhgdialog_default .lhgdg_leftBottom_default{height:2px;width:2px;background:#9fadb5;}
+.lhgdialog_default .lhgdg_rightBottom_default{height:2px;width:2px;background:#9fadb5;}
+.lhgdialog_default .lhgdg_left_default{width:2px;background:#9fadb5;-moz-box-shadow:0 -15px 15px #000;-webkit-box-shadow:0 -15px 15px #000;-o-box-shadow:0 -15px 15px #000;box-shadow:0 -15px 15px #000;}
+.lhgdialog_default .lhgdg_right_default{width:2px;background:#9fadb5;-moz-box-shadow:8px -15px 20px #000;-webkit-box-shadow:8px -15px 20px #000;-o-box-shadow:8px -15px 20px #000;box-shadow:8px -15px 20px #000;}
+.lhgdialog_default .lhgdg_top_default{border-bottom:2px solid #ffffff}
+.lhgdialog_default .lhgdg_leftTop_default{background:#d32151;width:2px;border-bottom:2px solid #9fadb5}
+.lhgdialog_default .lhgdg_rightTop_default{background:#d32151;width:2px;border-bottom:2px solid #9fadb5}
+#lhgdlg_fhdialog-confirm{width:450px !important;height:400px !important}
+#lhgdlg_fhdialog-confirm #lhgdg_content_fhdialog-confirm{height:150px !important;}
+#info_con,.lhgdg_btnBar_default{background:#fff !important;}
+.lhgdg_btnBar_default a.lhgdg_button_default em,#lhgdlg_fhdialog-confirm #lhgdg_content_fhdialog-confirm .info_txt,#lhgdlg_fhdialog-alert .info_txt,.lhgdg_title_icon_default .lhgdg_title_default{font-size:16px !important;}
+/***.alert_info{background:url(../images/meeting/logo/ts.png) no-repeat !important}***/
+a.lhgdg_xbtn_default:hover{background-position: -71px -20px !important;}

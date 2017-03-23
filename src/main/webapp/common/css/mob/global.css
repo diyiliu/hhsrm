@@ -1,0 +1,513 @@
+@charset "utf-8";
+/*-----------------------------公用样式global:start-----------------------------*/
+/*标签默认样式*/
+::selection{
+	background:#3297fd;
+	color:#fff;
+}
+::-webkit-input-placeholder{
+	color:#767676;	
+}
+:-moz-placeholder{
+	color:#767676;
+}
+::-moz-placeholder{
+	color:#767676;	
+}
+:-ms-input-placeholder{
+	color:#767676;
+}
+*{
+	margin:0;
+	padding:0;
+}
+body,button,input{
+	font: 14px arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
+}
+body{
+	-webkit-tap-highlight-color: rgba(0,0,0,0);/*ios点击一个链接时产生的半透明灰色背景，设置它为透明色*/
+}
+.appearance-none{
+	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+}
+.appearance-normal{
+	appearance:normal;
+	-moz-appearance:normal;
+	-webkit-appearance:normal;
+}
+ul,li,dl,dt,dd {
+	list-style: none;
+}
+a{
+	text-decoration:none;
+	outline:none;
+	cursor:pointer;
+}
+a:hover,a:active,.a:hover,.a:active{
+	color:#60898b;
+}
+a,label, :focus{
+	outline:0 none;
+}
+img {
+  border: 0;
+  vertical-align:middle;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+dfn {
+  font-style: italic;
+}
+small {
+  font-size: 80%;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+/*容器样式*/
+.relative {
+	position: relative;
+}
+.absolute{
+	position:absolute;
+}
+.hide{
+	display:none;
+}
+.hidden{
+	visibility:hidden;
+}
+.block{
+	display:block;
+}
+.inline-block{
+	display:inline-block;
+}
+.break-all{
+	word-break:break-all;
+}
+.nowrap{
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.noclick{
+	background-color:transparent !important;;
+}
+.noclick:active{
+	background-color:transparent !important;;
+}
+.bg-transparent{
+	background-color:transparent;
+}
+
+/*清除浮动*/
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: " ";
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix{
+	zoom:1;
+}
+.clear{
+	clear:both;
+}
+/*----------------------------原始布局方式:start----------------------------*/
+.text-ltr{
+	-webkit-writing-mode: horizontal-tb;/*横向写，从左向右写*/
+}
+.text-ttb-right{
+	-webkit-writing-mode: vertical-rl;/*竖向写，从右开始写*/
+}
+.text-ttb{
+	-webkit-writing-mode: vertical-lr;/*竖向写，从左开始写*/
+}
+.text-center,td.text-center,th.text-center{
+	text-align:center;
+}
+.text-right,td.text-right,th.text-right{
+	text-align:right;
+	direction:rtl;
+}
+.text-left,td.text-left,th.text-left{
+	text-align:left;
+	direction:ltr;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+.middle{
+	position:absolute;
+	top:50%;
+	transform:translateY(-50%);
+	-ms-transform:translateY(-50%); 	/* IE 9 */
+	-moz-transform:translateY(-50%); 	/* Firefox */
+	-webkit-transform:translateY(-50%); /* Safari 和 Chrome */
+	-o-transform:translateY(-50%); 
+}
+.center{
+	position:absolute;
+	left:50%;
+	transform:translateX(-50%);
+	-ms-transform:translateX(-50%); 	/* IE 9 */
+	-moz-transform:translateX(-50%); 	/* Firefox */
+	-webkit-transform:translateX(-50%); /* Safari 和 Chrome */
+	-o-transform:translateX(-50%); 
+}
+.middlecenter{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%); 	/* IE 9 */
+	-moz-transform:translate(-50%,-50%); 	/* Firefox */
+	-webkit-transform:translate(-50%,-50%); /* Safari 和 Chrome */
+	-o-transform:translate(-50%,-50%); 
+}
+.bottom{
+	position:absolute;
+	bottom:0;
+}
+.top{
+	position:absolute;
+	top:0;
+}
+.table{
+	display:table;
+}
+.table-cell-bottom{
+	display: table-cell;
+	vertical-align: bottom;
+}
+/*----------------------------原始布局方式:end----------------------------*/
+
+/*----------------------------box布局方式:start----------------------------*/
+.box{
+	display:-moz-box;
+	display:-webkit-box;
+	display: box;
+}
+.box-center,.box-middlecenter{
+	box-pack:center;
+	-moz-box-pack:center;
+	-webkit-box-pack:center;
+}
+.box-right{
+	box-pack:end;
+	-moz-box-pack:end;
+	-webkit-box-pack:end;
+}
+.box-middle,.box-middlecenter{
+	box-align:center;
+	-moz-box-align:center;
+	-webkit-box-align:center;
+}
+.box-bottom{
+	box-align:end;
+	-moz-box-align:end;
+	-webkit-box-align:end;
+}
+.box-vertical{
+	-moz-box-orient:vertical;
+    -webkit-box-orient:vertical;
+    box-orient:vertical;
+}
+.box-horizontal{
+	-moz-box-orient:horizontal;
+	-webkit-box-orient:horizontal;
+    box-orient:horizontal;
+}
+.box-flex-1{
+	-moz-box-flex:1.0;
+	-webkit-box-flex:1.0;
+	box-flex:1.0;
+}
+.box-flex-2{
+	-moz-box-flex:2.0;
+	-webkit-box-flex:2.0;
+	box-flex:2.0;
+}
+.box-flex-3{
+	-moz-box-flex:3.0;
+	-webkit-box-flex:3.0;
+	box-flex:3.0;
+}
+/*----------------------------box布局方式:end----------------------------*/
+
+/*----------------------------flex布局方式:start----------------------------*/
+.flex{
+	display:flex;
+}
+.flex-1{
+	flex:1;
+}
+.flex-2{
+	flex:2;
+}
+.flex-3{
+	flex:3;
+}
+.flex-4{
+	flex:4;
+}
+.flex-5{
+	flex:5;
+}
+.flex-6{
+	flex:6;
+}
+.flex-7{
+	flex:7;
+}
+.flex-8{
+	flex:8;
+}
+.flex-9{
+	flex:9;
+}
+/*--------------flex-flow--------------*/
+/*横向*/
+.flex-row{
+	flex-flow:row;/*横向排列*/
+}
+.flex-row-wrap{
+	flex-flow:row wrap;/*超过部分将换行*/
+}
+.flex-row-reverse{
+	flex-flow:row-reverse;/*横向倒序排列*/
+}
+.flex-row-reverse-wrap{
+	flex-flow:row-reverse wrap;/*超过部分将换行*/
+}
+/*纵向*/
+.flex-col{
+	flex-flow:column;/*纵向排列*/
+}
+.flex-col-wrap{
+	flex-flow:column wrap;/*超过部分将换行*/
+}
+.flex-col-reverse{
+	flex-flow:column-reverse;/*纵向倒序排列*/
+}
+/*--------------align-content--------------*/
+.align-stretch{
+	align-content:stretch;/*拉伸*/
+}
+.align-start{
+	align-content:flex-start; /*顶部对齐*/
+}
+.align-center{
+	align-content:center; /*垂直居中*/
+}
+.align-end{
+	align-content:flex-end;/*底部对齐*/
+}
+.align-between{
+	align-content:space-between; /*垂直两端分布*/
+}
+.align-around{
+	align-content:space-around; /*垂直居中分布*/
+}
+/*--------------justify-content--------------*/
+/*配合flex-row-wrap一同使用*/
+.justify-stretch{
+	justify-content:stretch;/*拉伸*/
+}
+.justify-start{
+	justify-content:flex-start; /*左对齐*/
+}
+.justify-center{
+	justify-content:center; /*水平居中*/
+}
+.justify-end{
+	justify-content:flex-end; /*右对齐*/
+}
+.justify-between{
+	justify-content:space-between; /*水平两端分布*/
+}
+.justify-around{
+	justify-content:space-around; /*水平居中分布*/
+}
+/*--------------align-items--------------*/
+.align-items-stretch{
+	align-items:stretch;/*拉伸*/
+}
+.align-items-center{
+	align-items:center; /*垂直居中*/
+}
+.align-items-start{
+	align-items:flex-start; /*顶部对齐*/
+}
+.align-items-end{
+	align-items:flex-end; /*底部对齐*/
+}
+/*--------------align-self--------------*/
+.align-self-stretch{
+	align-self:stretch;/*拉伸*/
+}
+.align-self-start{
+	align-self:flex-start; /*顶部对齐*/
+}
+.align-self-center{
+	align-self:center; /*垂直居中*/
+}
+.align-self-end{
+	align-self:flex-end; /*底部对齐*/
+}
+/*----------------------------flex布局方式:end----------------------------*/
+
+/*css3 特效*/
+.rect{
+	border-radius:0;
+}
+.round{
+	border-radius:40px;
+	height:40px;
+	width:40px;
+}
+.shadow{
+	box-shadow:0 2px 3px 0 rgba(0, 0, 0, 0.2);/*分别指投影的：偏右、偏下、模糊度、扩展、颜色*/
+}
+.reflect-below{
+	-webkit-box-reflect:below 0 -webkit-linear-gradient(bottom,rgba(0,0,0,.3) 0,rgba(0,0,0,0) 60%);
+}
+.bg-gradient {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#eeeeee));
+	border-top: 1px solid #fff;
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.1) inset;
+}
+.noopacity {
+	opacity:1;
+	filter:Alpha(opacity=100);
+}
+.opacity7 {
+	opacity:0.7;
+	filter:Alpha(opacity=70);
+}
+.opacity6 {
+	opacity:0.6;
+	filter:Alpha(opacity=60);
+}
+.opacity3{
+	opacity:0.3;
+	filter:Alpha(opacity=30);
+}
+.opacity{
+	opacity:0;
+	filter:Alpha(opacity=0);
+}
+
+
+/*边框与线条*/
+.borderbox{
+	box-sizing:border-box;
+}
+.contentbox{
+	box-sizing:content-box;
+}
+.noborder{
+	border:none !important;
+}
+hr{
+	border:none;
+	clear:both;
+	border-top: 1px solid #ddd;
+	margin-top:10px;
+}
+br{
+	clear:both;
+}
+
+/*文字*/
+.bold{
+	font-weight:bold;
+}
+.font-L{
+	font-size:16px;
+}
+.font-M{
+	font-size:14px;
+}
+.font-S{
+	font-size:12px;
+}
+.section-title {
+	font-size:14px;
+	line-height:40px;
+	margin-bottom:8px;
+}
+.paragraph{
+	margin-top:10px;
+}
+.indent{
+	text-indent:24px;
+}
+.uppercase{
+	text-transform:uppercase;/*大写*/
+}
+.lowercase {
+	text-transform: lowercase;/*小写*/
+}
+.capitalize {
+	text-transform: capitalize;/*首字母大写*/
+}
+
+/*间距与布局*/
+.width-auto{
+	width:auto;
+}
+.width-full{
+	width:100%;
+}
+.height-full{
+	height:100%;
+}
+.height-auto{
+	height:auto;
+}
+.rowspace{
+	height:4px;
+	border:none;
+	clear:both;
+}
+.rowspace-small{
+	height:1px;
+	border:none;
+	clear:both;
+}
+.rowspace-large{
+	height:20px;
+	border:none;
+	clear:both;
+}
+.nopadding{
+	padding:0 !important;
+}
+.nomargin{
+	margin:0 !important;
+}
+.overflow-auto{
+	overflow: auto;
+  	-webkit-overflow-scrolling: touch;
+}
+/*-----------------------------公用样式global:end-----------------------------*/

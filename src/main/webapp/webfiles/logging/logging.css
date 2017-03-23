@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+.textareaMonitor 
+{
+	width: 1024px;
+	height: 378px;
+	font-size: 12px;
+	position: relative;
+	background: url(../images/main/input_bg.jpg) repeat-x;
+	border: 1px solid #BFBFC0;
+	padding-top: 0px;
+	cursor: text;
+}
+.demo-info
+{
+	background:#FFFEE6;
+	color:#8F5700;
+	padding:12px;
+}
+.demo-tip
+{
+	width:24px;
+	height:16px;
+	float:left;
+}
