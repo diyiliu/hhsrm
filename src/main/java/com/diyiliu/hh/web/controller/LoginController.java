@@ -3,6 +3,7 @@ package com.diyiliu.hh.web.controller;
 import com.diyiliu.hh.web.bean.SysResource;
 import com.diyiliu.hh.web.service.SysResourceService;
 import com.diyiliu.hh.web.service.SysUserService;
+import com.diyiliu.shiro.exec.KaptchaException;
 import com.diyiliu.support.other.Constant;
 import com.diyiliu.support.util.JsonUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -42,36 +43,35 @@ public class LoginController {
     private SysResourceService sysResourceService;
 
     @RequestMapping(value = "/toLogin", method = RequestMethod.GET)
-    public String login(HttpServletRequest request) {
+    public String toLogin(HttpServletRequest request) {
         request.removeAttribute("error");
 
         return "login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public void login(HttpServletRequest request, HttpServletResponse response){
+    public void login(HttpServletRequest request, HttpServletResponse response) {
         String exceptionClassName = (String) request.getAttribute("shiroLoginFailure");
-        String kaptchaText = request.getParameter("rand");
 
         Map resultMap = new HashMap();
 
-        // 验证码错误
-        if (!checkKaptcha(kaptchaText, request.getSession())){
-            resultMap.put("errorCode", "1");
-            resultMap.put("errorMsg", "验证码错误,请重新输入!");
+        // 登录成功
+        if (StringUtils.isEmpty(exceptionClassName)) {
 
-            // 登录成功
-        }else if (StringUtils.isEmpty(exceptionClassName)){
             resultMap.put("redirectURL", "toMain.htm");
             resultMap.put("success", true);
-
-        }if (UnknownAccountException.class.getName().equals(exceptionClassName)
+        } else if (UnknownAccountException.class.getName().equals(exceptionClassName)
                 || IncorrectCredentialsException.class.getName().equals(exceptionClassName)) {
+
             resultMap.put("errorCode", "2");
             resultMap.put("errorMsg", "用户名/密码错误!");
         } else if (ExcessiveAttemptsException.class.getName().equals(exceptionClassName)) {
 
             resultMap.put("errorMsg", "登录错误次数超限，请稍后再试!");
+        } else if (KaptchaException.class.getName().equals(exceptionClassName)) {
+
+            resultMap.put("errorCode", "1");
+            resultMap.put("errorMsg", "验证码错误,请重新输入!");
         } else {
 
             resultMap.put("errorMsg", "登录异常：" + exceptionClassName);
@@ -87,7 +87,7 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/toMain")
-    public String toMain(Model model){
+    public String toMain(Model model) {
 
         SysResource condition = new SysResource();
         condition.setWhere(Constant.QBuilder.EQUAL, "type", "menu");
@@ -97,23 +97,5 @@ public class LoginController {
         model.addAttribute("resList", JsonUtil.toJson(resList));
 
         return "main";
-    }
-
-    /**
-     * 校验验证码
-     *
-     * @param text
-     * @param session
-     * @return
-     */
-    private boolean checkKaptcha(String text, HttpSession session){
-
-        String capText = (String) session.getAttribute(Constants.KAPTCHA_SESSION_KEY);
-
-        if (StringUtils.isEmpty(text) || StringUtils.isEmpty(capText)){
-            return  false;
-        }
-
-        return text.equalsIgnoreCase(capText);
     }
 }

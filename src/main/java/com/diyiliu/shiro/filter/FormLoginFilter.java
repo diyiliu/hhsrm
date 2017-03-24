@@ -1,6 +1,8 @@
 package com.diyiliu.shiro.filter;
 
+import com.diyiliu.shiro.exec.KaptchaException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.code.kaptcha.Constants;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -13,7 +15,7 @@ import org.apache.shiro.web.util.WebUtils;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -55,6 +57,13 @@ public class FormLoginFilter extends FormAuthenticationFilter {
     protected boolean onLoginSuccess(AuthenticationToken token, Subject subject, ServletRequest request, ServletResponse response) throws Exception {
 
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+
+        String kaptchaText = request.getParameter("rand");
+        if (!checkKaptcha(kaptchaText, httpServletRequest.getSession())){
+
+            return super.onLoginFailure(token, new KaptchaException(), request, response);
+        }
+
         if ("XMLHttpRequest".equalsIgnoreCase(httpServletRequest.getHeader("X-Requested-With"))) {
             Map resultMap = new HashMap();
             resultMap.put("redirectURL", successUrl);
@@ -78,6 +87,24 @@ public class FormLoginFilter extends FormAuthenticationFilter {
         return new UsernamePasswordToken(getUsername(request), getPassword(request), rememberMe, getHost(request));
     }
 
+
+    /**
+     * 校验验证码
+     *
+     * @param text
+     * @param session
+     * @return
+     */
+    private boolean checkKaptcha(String text, HttpSession session){
+
+        String capText = (String) session.getAttribute(Constants.KAPTCHA_SESSION_KEY);
+
+        if (StringUtils.isEmpty(text) || StringUtils.isEmpty(capText)){
+            return  false;
+        }
+
+        return text.equalsIgnoreCase(capText);
+    }
 
     @Override
     public boolean isRememberMe(ServletRequest request) {
@@ -124,3 +151,4 @@ public class FormLoginFilter extends FormAuthenticationFilter {
         this.rememberMe = rememberMe;
     }
 }
+
