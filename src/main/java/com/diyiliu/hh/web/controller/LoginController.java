@@ -6,6 +6,7 @@ import com.diyiliu.hh.web.service.SysUserService;
 import com.diyiliu.support.other.Constant;
 import com.diyiliu.support.util.JsonUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.code.kaptcha.Constants;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -49,10 +51,17 @@ public class LoginController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public void login(HttpServletRequest request, HttpServletResponse response){
         String exceptionClassName = (String) request.getAttribute("shiroLoginFailure");
+        String kaptchaText = request.getParameter("rand");
 
         Map resultMap = new HashMap();
-        // 登录成功
-        if (StringUtils.isEmpty(exceptionClassName)){
+
+        // 验证码错误
+        if (!checkKaptcha(kaptchaText, request.getSession())){
+            resultMap.put("errorCode", "1");
+            resultMap.put("errorMsg", "验证码错误,请重新输入!");
+
+            // 登录成功
+        }else if (StringUtils.isEmpty(exceptionClassName)){
             resultMap.put("redirectURL", "toMain.htm");
             resultMap.put("success", true);
 
@@ -90,4 +99,21 @@ public class LoginController {
         return "main";
     }
 
+    /**
+     * 校验验证码
+     *
+     * @param text
+     * @param session
+     * @return
+     */
+    private boolean checkKaptcha(String text, HttpSession session){
+
+        String capText = (String) session.getAttribute(Constants.KAPTCHA_SESSION_KEY);
+
+        if (StringUtils.isEmpty(text) || StringUtils.isEmpty(capText)){
+            return  false;
+        }
+
+        return text.equalsIgnoreCase(capText);
+    }
 }

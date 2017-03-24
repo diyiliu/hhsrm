@@ -1,11 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="path" value="${pageContext.request.contextPath}"/>
+<%@include file="/common.jsp"%>
 <html>
 <head>
     <title>淮海控股</title>
-    <link rel="stylesheet" type="text/css" href="${path}/common/css/all.css"/>
     <link rel="stylesheet" type="text/css" href="${path}/common/css/layout.css"/>
     <link rel="stylesheet" type="text/css" href="${path}/common/js/ztree/zTreeStyle.css"/>
 
@@ -117,20 +115,10 @@
     </ul>
 </div>
 <!-- drag depend on ui js -->
-<script type="text/javascript" src="${path}/common/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="${path}/common/js/jquery-ui.js"></script>
 <script type="text/javascript" src="${path}/common/js/jquery.layout.js"></script>
 <script type="text/javascript" src="${path}/common/js/frame.js"></script>
 <script type="text/javascript" src="${path}/common/js/ztree/jquery.ztree.core-3.5.js"></script>
-
-<!-- dialog 相关js -->
-<script type="text/javascript" src="${path}/common/js/lhgdialog/lhgdialog.min.js"></script>
-<script type="text/javascript" src="${path}/common/js/fh.dialog.js"></script>
-<script type="text/javascript" src="${path}/common/js/common.js"></script>
-<script type="text/javascript" src="${path}/common/js/FhFormSerializer.js"></script>
-
-<!--Wdate -->
-<script type="text/javascript" src="${path}/common/js/datapicker/WdatePicker.js" defer="defer"></script>
 
 <script type="text/javascript">
     var zTree;
