@@ -131,7 +131,7 @@
     <!-- Shiro的Web过滤器 -->
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
-        <property name="loginUrl" value="/login.jsp"/>
+        <property name="loginUrl" value="/toLogin.htm"/>
         <property name="filters">
             <util:map>
                 <entry key="authc" value-ref="formAuthenticationFilter"/>
@@ -144,7 +144,7 @@
                 /common/** = anon
                 /webfiles/** = anon
                 /kaptcha.htm = anon
-                /login.jsp = anon
+                /toLogin.htm = anon
                 /login.htm = authc
                 /logout.htm = anon
                 /authenticated.htm = authc

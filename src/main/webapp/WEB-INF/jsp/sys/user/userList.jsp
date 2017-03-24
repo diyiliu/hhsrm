@@ -1,0 +1,115 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="${path}/common/css/all.css"/>
+</head>
+<body>
+<form id="accountForm" name="accountForm" action="" method="post">
+    <div  class="contenbox">
+        <!--options-->
+        <div class="grid_summay_opts">
+            <div class="left_opts">
+                <a hideFocus="true" href="javascript:toInput()" class="gray_radiu_btn" >
+                    <em class="gray_l"></em>
+                    <em class="gray_r"></em>
+                    新增
+                </a>
+                <a hideFocus="true" href="javascript:edit()" class="gray_radiu_btn" >
+                    <em class="gray_l"></em>
+                    <em class="gray_r"></em>
+                    编辑
+                </a>
+                <a hideFocus="true" href="javascript:deleteObjects();" class="gray_radiu_btn">
+                    <em class="gray_l"></em>
+                    <em class="gray_r"></em>
+                    删除
+                </a>
+                <a hideFocus="true" href="javascript:changePassword()" class="gray_radiu_btn" >
+                    <em class="gray_l"></em>
+                    <em class="gray_r"></em>
+                    修改密码
+                </a>
+                <a hideFocus="true" href="javascript:openRoleTree()" class="gray_radiu_btn" >
+                    <em class="gray_l"></em>
+                    <em class="gray_r"></em>
+                    设置角色
+                </a>
+            </div>
+        </div>
+        <div class="sprite_mod">
+            <a class="Js_showSearch mod_opts" hidfocus="true" id="searchnav">查询条件</a>
+        </div>
+        <!-- 表格列表过滤条件设置 -->
+        <div class="filter-mod">
+            <ul class="filter-list">
+                <li class="filter-item">
+                    <label class="filter-label">
+                        工号：
+                    </label>
+                    <input type="text" id="name" class="filter-text" />
+                </li>
+                <li class="filter-item">
+                    <label class="filter-label">
+                        手机：
+                    </label>
+                    <input type="text" id="nameCn" class="filter-text" />
+                </li>
+                <li class="filter-item">
+                    <label class="filter-label">
+                        是否为缺省密码：
+                        <select name="customerStatus" id="customerStatus" class="filter-select">
+                            <option value=""></option>
+                            <option value="1">是</option>
+                            <option value="9">否</option>
+                        </select>
+                    </label>
+
+                </li>
+                <li class="filter-item filter-btns">
+                    <a hideFocus="true" class="gray_radiu_btn Js_searchTable">
+                        <em class="gray_l"></em>
+                        <em class="gray_r"></em>
+                        查询
+                    </a>
+                    <a hideFocus="true" href="javascript:clearCondition();" class="gray_radiu_btn Js_reLoadTable">
+                        <em class="gray_l"></em>
+                        <em class="gray_r"></em>
+                        清空
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <table cellpadding="0" cellspacing="0" border="0" id="grid-table" width="100%" class="common_table Js_contextMenuOpt">
+            <thead>
+            <tr>
+                <th><input type="checkbox" /></th>
+                <th>工号</th>
+                <th>手机</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</form>
+<!--table td 右击 -->
+<!--右击td显示的右击菜单-->
+<div class="rightMenu bodyMenu Js_tdMenu">
+    <!--存储当前点击行的数据-->
+    <input type="hidden" class="Js_curIndex" value="" />
+    <ul>
+        <li><a hideFocus="true" href="javascript:edit()">编辑</a></li>
+        <li><a hideFocus="true" href="javascript:openRoleTree()">设置角色</a></li>
+    </ul>
+</div>
+</body>
+</html>

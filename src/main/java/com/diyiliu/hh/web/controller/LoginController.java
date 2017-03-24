@@ -1,7 +1,6 @@
 package com.diyiliu.hh.web.controller;
 
 import com.diyiliu.hh.web.bean.SysResource;
-import com.diyiliu.hh.web.bean.SysUser;
 import com.diyiliu.hh.web.service.SysResourceService;
 import com.diyiliu.hh.web.service.SysUserService;
 import com.diyiliu.support.other.Constant;
@@ -40,11 +39,11 @@ public class LoginController {
     @Resource
     private SysResourceService sysResourceService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/toLogin", method = RequestMethod.GET)
     public String login(HttpServletRequest request) {
         request.removeAttribute("error");
 
-        return "/login";
+        return "login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -88,7 +87,7 @@ public class LoginController {
         List resList = sysResourceService.selectForList(condition);
         model.addAttribute("resList", JsonUtil.toJson(resList));
 
-        return "/main";
+        return "main";
     }
 
 }
