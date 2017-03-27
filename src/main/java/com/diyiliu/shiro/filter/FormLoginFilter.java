@@ -35,7 +35,7 @@ public class FormLoginFilter extends FormAuthenticationFilter {
 
     @Override
     protected boolean executeLogin(ServletRequest request, ServletResponse response) throws Exception {
-        System.out.println("FormLoginFilter -- ");
+        // System.out.println("FormLoginFilter -- ");
 
         AuthenticationToken token = createToken(request, response);
         if (token == null) {

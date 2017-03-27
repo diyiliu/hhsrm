@@ -1,6 +1,6 @@
+<!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/common.jsp"%>
-<!DOCTYPE html>
 <html>
 <head>
 </head>
@@ -114,7 +114,7 @@
     var datatable;
     $(document).ready(function () {
         var tableObj = FhFormSerializer.restore();
-        tableObj.url = "${path}/";
+        tableObj.url = "${path}/sys/user/list.htm";
         tableObj.bPanination = false;
         tableObj.aoColumns = [
             {

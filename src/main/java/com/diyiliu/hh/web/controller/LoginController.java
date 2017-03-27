@@ -9,6 +9,7 @@ import com.diyiliu.support.util.JsonUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.code.kaptcha.Constants;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -46,7 +47,7 @@ public class LoginController {
     public String toLogin(HttpServletRequest request) {
         request.removeAttribute("error");
 
-        return "login";
+        return "/login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -78,15 +79,13 @@ public class LoginController {
         }
 
         try {
-            response.setContentType("application/json;charset=UTF-8");
-            ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.writeValue(response.getWriter(), resultMap);
-        } catch (IOException e) {
+            JsonUtil.renderJson(resultMap, response);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    @RequestMapping(value = "/toMain")
+    @RequestMapping("/toMain")
     public String toMain(Model model) {
 
         SysResource condition = new SysResource();
@@ -97,5 +96,12 @@ public class LoginController {
         model.addAttribute("resList", JsonUtil.toJson(resList));
 
         return "main";
+    }
+
+    @RequestMapping("/logout")
+    public String logout(){
+        SecurityUtils.getSubject().logout();
+
+        return "redirect:/toLogin.htm";
     }
 }

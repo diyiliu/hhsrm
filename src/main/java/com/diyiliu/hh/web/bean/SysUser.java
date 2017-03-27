@@ -23,25 +23,25 @@ public class SysUser extends BaseEntity{
     private String password;
     @Column(name = "SALT")
     private String salt;
-
+    @Column(name = "REAL_NAME")
     private String realName;
-
+    @Column(name = "TEL")
     private String tel;
-
+    @Column(name = "EMAIL")
     private String email;
-
-    private String orgId;
-
+    @Column(name = "SYSO_ID")
+    private Long orgId;
+    @Column(name = "CREATE_TIME")
     private Date createTime;
-
+    @Column(name = "UPDATE_TIME")
     private Date updateTime;
-
+    @Column(name = "LAST_LOGIN_TIME")
     private Date lastLoginTime;
-
+    @Column(name = "LAST_LOGIN_IP")
     private Date lastLoginIp;
-
+    @Column(name = "COUNT")
     private Integer count;
-
+    @Column(name = "STATE")
     private Integer state;
 
     public Long getUserId() {
@@ -92,11 +92,11 @@ public class SysUser extends BaseEntity{
         this.email = email;
     }
 
-    public String getOrgId() {
+    public Long getOrgId() {
         return orgId;
     }
 
-    public void setOrgId(String orgId) {
+    public void setOrgId(Long orgId) {
         this.orgId = orgId;
     }
 

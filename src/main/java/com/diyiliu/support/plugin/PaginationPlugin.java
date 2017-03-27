@@ -75,12 +75,12 @@ public class PaginationPlugin extends SPlugin {
 
     public String buidPageSql(String sql, int offset, int limit) {
 
-        if (dialect.equals("mysql")) {
+        if (dialect.equalsIgnoreCase("mysql")) {
 
             return buildPageSqlForMysql(sql, offset, limit).toString();
         }
 
-        if (dialect.equals("oracle")) {
+        if (dialect.equalsIgnoreCase("oracle")) {
 
             return buildPageSqlForOracle(sql, offset, limit).toString();
         }
@@ -96,7 +96,7 @@ public class PaginationPlugin extends SPlugin {
     }
 
     public StringBuilder buildPageSqlForOracle(String sql, int offset, int limit) {
-        StringBuilder pageSql = new StringBuilder(sql);
+        StringBuilder pageSql = new StringBuilder();
         pageSql.append("select * from ( select temp.*, rownum row_id from ( ");
         pageSql.append(sql);
         pageSql.append(" ) temp where rownum <= ").append(offset + limit);
@@ -116,7 +116,11 @@ public class PaginationPlugin extends SPlugin {
     private void setPageParameter(String sql, DataSource dataSource, MappedStatement mappedStatement,
                                   BoundSql boundSql, Pagination page) {
         // 记录总记录数
-        String countSql = "select count(0) from (" + sql + ") as total";
+        String countSql = "select count(0) from (" + sql + ")";
+
+        if (dialect.equalsIgnoreCase("mysql")){
+            countSql += " as total";
+        }
 
         Connection connection = null;
         PreparedStatement statement = null;

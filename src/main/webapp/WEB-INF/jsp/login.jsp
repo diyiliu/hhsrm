@@ -30,6 +30,13 @@
                         <img src="${path}/kaptcha.htm" class="vali-img" style="cursor: pointer;" id="kaptchaImage"
                              onclick="refreshKaptcha()"/>
                     </li>
+                    <li class="form-item">
+                        <span class="login-label">部门</span>
+                        <select class="login-select-box">
+                            <option>宗申电三</option>
+                            <option>宗申摩三</option>
+                        </select>
+                    </li>
                     <li class="form-item check-item">
                         <span class="login-label">&nbsp;</span>
                         <label><input type="checkbox" name="rememberName" id="rememberName" ${check } />记住账号</label>
@@ -108,16 +115,18 @@
                         fh.alert('验证码错误，请重新输入！', false, function () {
                             $("#rand").select();
                         });
+                        refreshKaptcha();
                     } else if (msg.errorCode == "2") {
                         fh.alert(msg.errorMsg, false, function () {
                             $("#rand").val("");
                             $("#username").select();
                         });
+                        refreshKaptcha();
                     } else {
                         fh.alert(msg.errorMsg, false, function () {
                         });
+                        refreshKaptcha();
                     }
-                    refreshKaptcha();
                 }
             });
         }

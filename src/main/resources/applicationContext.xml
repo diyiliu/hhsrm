@@ -54,7 +54,7 @@
     <bean id="baseInterceptor" class="com.diyiliu.support.plugin.BasePlugin">
         <property name="properties">
             <props>
-                <prop key="dialect">mysql</prop>
+                <prop key="dialect">oracle</prop>
                 <prop key="baseSqlId">.*Entity$</prop>
             </props>
         </property>
@@ -64,7 +64,7 @@
     <bean id="paginationInterceptor" class="com.diyiliu.support.plugin.PaginationPlugin">
         <property name="properties">
             <props>
-                <prop key="dialect">mysql</prop>
+                <prop key="dialect">oracle</prop>
                 <prop key="pageSqlId">(select|query|)Entity$</prop>
             </props>
         </property>
