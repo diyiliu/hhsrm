@@ -79,6 +79,7 @@ public class LoginController {
         }
 
         try {
+            SecurityUtils.getSubject().logout();
             JsonUtil.renderJson(resultMap, response);
         } catch (Exception e) {
             e.printStackTrace();

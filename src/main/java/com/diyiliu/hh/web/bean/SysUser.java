@@ -38,7 +38,7 @@ public class SysUser extends BaseEntity{
     @Column(name = "LAST_LOGIN_TIME")
     private Date lastLoginTime;
     @Column(name = "LAST_LOGIN_IP")
-    private Date lastLoginIp;
+    private String lastLoginIp;
     @Column(name = "COUNT")
     private Integer count;
     @Column(name = "STATE")
@@ -124,11 +124,11 @@ public class SysUser extends BaseEntity{
         this.lastLoginTime = lastLoginTime;
     }
 
-    public Date getLastLoginIp() {
+    public String getLastLoginIp() {
         return lastLoginIp;
     }
 
-    public void setLastLoginIp(Date lastLoginIp) {
+    public void setLastLoginIp(String lastLoginIp) {
         this.lastLoginIp = lastLoginIp;
     }
 

@@ -1,6 +1,10 @@
 package com.diyiliu.shiro.filter;
 
+import com.diyiliu.hh.web.bean.SysUser;
+import com.diyiliu.hh.web.service.SysUserService;
 import com.diyiliu.shiro.exec.KaptchaException;
+import com.diyiliu.support.other.Constant;
+import com.diyiliu.support.util.CommonUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.code.kaptcha.Constants;
 import org.apache.commons.lang3.StringUtils;
@@ -12,10 +16,12 @@ import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.apache.shiro.web.util.WebUtils;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,6 +31,9 @@ import java.util.Map;
  * Update: 2015-10-20 13:56
  */
 public class FormLoginFilter extends FormAuthenticationFilter {
+
+    @Resource
+    private SysUserService sysUserService;
 
     private String loginUrl;
     private String successUrl;
@@ -63,6 +72,17 @@ public class FormLoginFilter extends FormAuthenticationFilter {
 
             return super.onLoginFailure(token, new KaptchaException(), request, response);
         }
+
+        SysUser sysUser = (SysUser) subject.getSession().getAttribute(Constant.CURRENT_USER);
+        sysUser.setCount(sysUser.getCount() + 1);
+        sysUser.setLastLoginTime(new Date());
+        sysUser.setLastLoginIp(CommonUtil.getIpAddress(httpServletRequest));
+
+        sysUser.setWhere(Constant.QBuilder.EQUAL, "userId", sysUser.getUserId());
+        sysUser.setNonNull(true);
+
+        sysUserService.update(sysUser);
+
 
         if ("XMLHttpRequest".equalsIgnoreCase(httpServletRequest.getHeader("X-Requested-With"))) {
             Map resultMap = new HashMap();

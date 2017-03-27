@@ -89,8 +89,8 @@
                 <th>账号</th>
                 <th>手机</th>
                 <th>姓名</th>
-                <th>登录时间</th>
                 <th>登录IP</th>
+                <th>登录时间</th>
                 <th>当前状态</th>
             </tr>
             </thead>
@@ -127,9 +127,17 @@
             {"mDataProp": "username", "sDefaultContent": "", "bSortable": false, "sClass": "text-align-mid"},
             {"mDataProp": "tel", "sDefaultContent": "", "bSortable": false, "sClass": "text-align-mid"},
             {"mDataProp": "realName", "sDefaultContent": "", "bSortable": false, "sClass": "text-align-mid"},
-            {"mDataProp": "lastLoginTime", "sDefaultContent": "", "bSortable": false, "sClass": "text-align-mid"},
             {"mDataProp": "lastLoginIp", "sDefaultContent": "", "bSortable": false, "sClass": "text-align-mid"},
-            {"mDataProp": "state", "sDefaultContent": "", "bSortable": false, "sClass": "text-align-mid"},
+            {"mDataProp": "lastLoginTime", "sDefaultContent": "", "bSortable": false, "sClass": "text-align-mid"},
+            {"mDataProp": "state", "sDefaultContent": "", "bSortable": false, "sClass": "text-align-mid","fnRender":
+                    function(o, val){
+                        if(val == 1){
+                            return "<span style='color: blue'>正常</span>";
+                        }else {
+                            return "<span  style='color: red'>停用</span>";
+                        }
+                    }
+            },
         ];
         datatable = datatableObj(tableObj);
     })

@@ -95,6 +95,10 @@ public class BasePlugin extends SPlugin {
             sbd = new StringBuilder("UPDATE ");
             sbd.append(table).append(" SET ");
             for (String field : fields) {
+                // 非主键
+                if (field.equalsIgnoreCase(key)){
+                    continue;
+                }
                 sbd.append(field).append("=").append(format(map.get(field))).append(", ");
             }
             int index = sbd.lastIndexOf(",");

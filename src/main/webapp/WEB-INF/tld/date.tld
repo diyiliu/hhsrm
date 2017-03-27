@@ -5,6 +5,7 @@
         version="2.1">
     <tlib-version>1.0</tlib-version>
     <short-name>d</short-name>
+    <uri>http://com.diyiliu.support/tag</uri>
 
     <tag>
         <name>dateTag</name>

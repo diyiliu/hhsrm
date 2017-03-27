@@ -1,11 +1,17 @@
 package com.diyiliu.support.util;
 
 import com.diyiliu.support.other.Pagination;
+import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializerProvider;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,13 +22,12 @@ import java.util.Map;
  */
 public class JsonUtil {
 
-    private final static ObjectMapper OBJECT_MAPPER = new ObjectMapper();
-
     public static String toJson(Object obj){
+        ObjectMapper objectMapper = new ObjectMapper();
 
         String json = "";
         try {
-            json = OBJECT_MAPPER.writeValueAsString(obj);
+            json = objectMapper.writeValueAsString(obj);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
@@ -36,9 +41,10 @@ public class JsonUtil {
      * @param response
      */
     public static void renderJson(Object obj, HttpServletResponse response){
+        ObjectMapper objectMapper = new ObjectMapper();
         try {
             response.setContentType("application/json;charset=UTF-8");
-            OBJECT_MAPPER.writeValue(response.getWriter(), obj);
+            objectMapper.writeValue(response.getWriter(), obj);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -46,11 +52,30 @@ public class JsonUtil {
 
     /**
      * 转分页JSON
-     * @param obj
      * @param page
      * @param response
      */
     public static void renderJson(Pagination page, HttpServletResponse response){
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        SimpleModule module = new SimpleModule();
+        // 保留两位小数
+        module.addSerializer(BigDecimal.class, new JsonSerializer<BigDecimal>() {
+            @Override
+            public void serialize(BigDecimal value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
+                gen.writeString(value.setScale(1, BigDecimal.ROUND_HALF_UP).toString());
+            }
+        });
+        // 日期格式
+        module.addSerializer(Date.class, new JsonSerializer<Date>() {
+            @Override
+            public void serialize(Date value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
+
+                gen.writeString(String.format("%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS", value));
+            }
+        });
+        objectMapper.registerModule(module);
+
 
         // 将要转换的对象
         Map<String, Object> result = new HashMap<String, Object>();
@@ -71,7 +96,7 @@ public class JsonUtil {
         result.put("aaData", page.getRows());
         try {
             response.setContentType("application/json;charset=UTF-8");
-            OBJECT_MAPPER.writeValue(response.getWriter(), result);
+            objectMapper.writeValue(response.getWriter(), result);
         } catch (IOException e) {
             e.printStackTrace();
         }
